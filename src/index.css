@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom styles for form inputs */
+input,
+textarea {
+  @apply border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary block w-full rounded-md;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
