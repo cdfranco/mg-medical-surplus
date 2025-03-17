@@ -1,3 +1,4 @@
+// Force rebuild - Updated with search and filter functionality
 import React, { useState, useMemo, Suspense, lazy } from 'react';
 import { Link } from 'react-router-dom';
 import LazyImage from './LazyImage';
