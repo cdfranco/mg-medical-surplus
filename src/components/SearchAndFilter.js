@@ -26,8 +26,8 @@ const SearchAndFilter = ({ onSearch, onFilter, categories }) => {
   };
 
   return (
-    <div className='w-full max-w-6xl mx-auto px-4 mb-8'>
-      <div className='bg-white rounded-lg shadow-md p-4'>
+    <div className='w-full max-w-6xl mx-auto px-4 mb-8 mt-8'>
+      <div className='bg-white rounded-lg shadow-lg p-6'>
         {/* Search Bar */}
         <div className='relative'>
           <input
@@ -35,12 +35,13 @@ const SearchAndFilter = ({ onSearch, onFilter, categories }) => {
             placeholder='Search medical equipment...'
             value={searchTerm}
             onChange={handleSearch}
-            className='w-full px-4 py-3 pl-12 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200'
+            className='w-full px-6 py-3 pl-12 rounded-lg border-2 border-gray-200 focus:border-[#0066CC] focus:ring-2 focus:ring-[#0066CC]/20 transition-all duration-200 text-gray-700 text-lg'
           />
-          <FiSearch className='absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl' />
+          <FiSearch className='absolute left-4 top-1/2 -translate-y-1/2 text-[#0066CC] text-xl' />
           <button
             onClick={() => setShowFilters(!showFilters)}
-            className='absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-primary transition-colors duration-200'
+            className='absolute right-4 top-1/2 -translate-y-1/2 text-[#0066CC] hover:text-[#004C99] transition-colors duration-200'
+            aria-label='Toggle filters'
           >
             <FiFilter className='text-xl' />
           </button>
@@ -48,19 +49,19 @@ const SearchAndFilter = ({ onSearch, onFilter, categories }) => {
 
         {/* Filters */}
         <div
-          className={`grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 ${
+          className={`grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 ${
             showFilters ? 'block' : 'hidden'
           }`}
         >
           {/* Category Filter */}
           <div>
-            <label className='block text-sm font-medium text-gray-700 mb-1'>
+            <label className='block text-sm font-medium text-gray-700 mb-2'>
               Category
             </label>
             <select
               value={selectedCategory}
               onChange={handleCategoryChange}
-              className='w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200'
+              className='w-full px-4 py-2 rounded-lg border-2 border-gray-200 focus:border-[#0066CC] focus:ring-2 focus:ring-[#0066CC]/20 transition-all duration-200 text-gray-700'
             >
               <option value='all'>All Categories</option>
               {categories.map((category) => (
@@ -73,13 +74,13 @@ const SearchAndFilter = ({ onSearch, onFilter, categories }) => {
 
           {/* Price Range Filter */}
           <div>
-            <label className='block text-sm font-medium text-gray-700 mb-1'>
+            <label className='block text-sm font-medium text-gray-700 mb-2'>
               Price Range
             </label>
             <select
               value={priceRange}
               onChange={handlePriceRangeChange}
-              className='w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200'
+              className='w-full px-4 py-2 rounded-lg border-2 border-gray-200 focus:border-[#0066CC] focus:ring-2 focus:ring-[#0066CC]/20 transition-all duration-200 text-gray-700'
             >
               <option value='all'>All Prices</option>
               <option value='0-1000'>Under $1,000</option>
