@@ -47,8 +47,8 @@ function HomePage() {
             <div className='relative h-[500px] rounded-xl overflow-hidden shadow-2xl'>
               <div className='absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent z-10'></div>
               <img
-                src='https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80'
-                alt='Modern Medical Facility Equipment'
+                src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80'
+                alt='Happy Female Medical Professional'
                 className='absolute inset-0 w-full h-full object-cover'
               />
             </div>
