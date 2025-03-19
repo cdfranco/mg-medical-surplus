@@ -243,263 +243,65 @@ function HomePage() {
                 outstanding. Their attention to detail and professional service
                 has made them our go-to supplier."
               </p>
-              <div className='mt-4 flex text-primary'>
-                <svg
-                  className='h-5 w-5'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                >
-                  <path d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z' />
-                </svg>
-                <svg
-                  className='h-5 w-5'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                >
-                  <path d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z' />
-                </svg>
-                <svg
-                  className='h-5 w-5'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                >
-                  <path d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z' />
-                </svg>
-                <svg
-                  className='h-5 w-5'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                >
-                  <path d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z' />
-                </svg>
-                <svg
-                  className='h-5 w-5'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                >
-                  <path d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z' />
-                </svg>
-              </div>
             </div>
-
             {/* Testimonial 2 */}
             <div className='bg-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300'>
               <div className='flex items-center mb-6'>
                 <img
                   className='h-12 w-12 rounded-full object-cover'
                   src='https://images.unsplash.com/photo-1612349317150-e413f6a5b16d'
-                  alt='Healthcare Professional'
+                  alt='Doctor'
                 />
                 <div className='ml-4'>
                   <p className='text-lg font-semibold text-secondary'>
-                    Michael Chen
+                    Dr. Michael Chen
                   </p>
                   <p className='text-gray-500'>
-                    Operations Manager, Macon Medical Center
+                    Chief of Surgery, Macon Hospital
                   </p>
                 </div>
               </div>
               <p className='text-gray-600 italic'>
-                "Their technical support team is exceptional. They've helped us
-                maintain our equipment efficiently, saving us both time and
-                resources."
+                "Their commitment to quality and customer service is
+                exceptional. The equipment we purchased has been reliable and
+                cost-effective."
               </p>
-              <div className='mt-4 flex text-primary'>
-                <svg
-                  className='h-5 w-5'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                >
-                  <path d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z' />
-                </svg>
-                <svg
-                  className='h-5 w-5'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                >
-                  <path d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z' />
-                </svg>
-                <svg
-                  className='h-5 w-5'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                >
-                  <path d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z' />
-                </svg>
-                <svg
-                  className='h-5 w-5'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                >
-                  <path d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z' />
-                </svg>
-                <svg
-                  className='h-5 w-5'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                >
-                  <path d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z' />
-                </svg>
-              </div>
             </div>
-
             {/* Testimonial 3 */}
             <div className='bg-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300'>
               <div className='flex items-center mb-6'>
                 <img
                   className='h-12 w-12 rounded-full object-cover'
                   src='https://images.unsplash.com/photo-1594824476967-48c8b964273f'
-                  alt='Hospital Administrator'
+                  alt='Doctor'
                 />
                 <div className='ml-4'>
                   <p className='text-lg font-semibold text-secondary'>
                     Dr. Emily Martinez
                   </p>
                   <p className='text-gray-500'>
-                    Chief of Surgery, Eatonton Hospital
+                    Owner, Eatonton Medical Center
                   </p>
                 </div>
               </div>
               <p className='text-gray-600 italic'>
-                "MG Medical Surplus has been instrumental in helping us upgrade
-                our surgical equipment. Their prices are competitive and the
-                quality is exceptional."
+                "MG Medical Surplus has been instrumental in helping us expand
+                our practice. Their equipment and support are top-notch."
               </p>
-              <div className='mt-4 flex text-primary'>
-                <svg
-                  className='h-5 w-5'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                >
-                  <path d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z' />
-                </svg>
-                <svg
-                  className='h-5 w-5'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                >
-                  <path d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z' />
-                </svg>
-                <svg
-                  className='h-5 w-5'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                >
-                  <path d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z' />
-                </svg>
-                <svg
-                  className='h-5 w-5'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                >
-                  <path d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z' />
-                </svg>
-                <svg
-                  className='h-5 w-5'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                >
-                  <path d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z' />
-                </svg>
-              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Contact Section */}
-      <div id='contact' className='bg-gray-50 py-16'>
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-          <div className='text-center'>
-            <h2 className='text-3xl font-extrabold text-secondary'>
-              Contact Us
-            </h2>
-            <p className='mt-4 text-lg text-gray-500'>
-              Get in touch with our experts for personalized solutions
-            </p>
-          </div>
-          <div className='mt-12 max-w-lg mx-auto'>
-            <form className='grid grid-cols-1 gap-6'>
-              <div>
-                <label
-                  htmlFor='name'
-                  className='block text-sm font-medium text-gray-700'
-                >
-                  Name
-                </label>
-                <input
-                  type='text'
-                  name='name'
-                  id='name'
-                  className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary px-4 py-2'
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor='email'
-                  className='block text-sm font-medium text-gray-700'
-                >
-                  Email
-                </label>
-                <input
-                  type='email'
-                  name='email'
-                  id='email'
-                  className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary px-4 py-2'
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor='message'
-                  className='block text-sm font-medium text-gray-700'
-                >
-                  Message
-                </label>
-                <textarea
-                  id='message'
-                  name='message'
-                  rows='4'
-                  className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary px-4 py-2'
-                ></textarea>
-              </div>
-              <div>
-                <button
-                  type='submit'
-                  className='w-full bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark'
-                >
-                  Send Message
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
+      <div
+        id='contact'
+        className='bg-gradient-to-br from-blue-50 via-white to-blue-50'
+      >
+        <Contact />
       </div>
     </>
   );
-}
-
-function TidioChat() {
-  useEffect(() => {
-    // Create a new script element
-    const script = document.createElement('script');
-
-    // Set the source to your Tidio chat widget
-    script.src = '//code.tidio.co/8wnd92ffwsoqcnuvmzm4vmvdgmfsyd1i.js';
-
-    // Make it load asynchronously to not block page rendering
-    script.async = true;
-
-    // Add the script to the document body
-    document.body.appendChild(script);
-
-    // Cleanup function that runs when component unmounts
-    return () => {
-      // Remove the script to prevent memory leaks
-      document.body.removeChild(script);
-    };
-  }, []); // Empty dependency array means this runs once on mount
-
-  return null; // Component doesn't render anything visible
 }
 
 function App() {
@@ -560,79 +362,7 @@ function App() {
 
         {/* Footer */}
         <footer className='bg-secondary text-white'>
-          <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
-              <div>
-                <h3 className='text-xl font-bold'>MG Medical Surplus</h3>
-                <p className='mt-4 text-gray-300'>
-                  Your trusted source for quality medical equipment in Middle
-                  Georgia.
-                </p>
-                <div className='mt-4 flex items-center space-x-4'>
-                  <a
-                    href='https://www.facebook.com/MGMedicalSurplus'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='text-gray-300 hover:text-white transition-colors'
-                    aria-label='Visit our Facebook page'
-                  >
-                    <svg className='w-6 h-6 fill-current' viewBox='0 0 24 24'>
-                      <path d='M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z' />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-              <div>
-                <h3 className='text-xl font-bold'>Quick Links</h3>
-                <ul className='mt-4 space-y-2'>
-                  <li>
-                    <a
-                      href='#products'
-                      className='text-gray-300 hover:text-white'
-                    >
-                      Products
-                    </a>
-                  </li>
-                  <li>
-                    <a href='#about' className='text-gray-300 hover:text-white'>
-                      About Us
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href='#contact'
-                      className='text-gray-300 hover:text-white'
-                    >
-                      Contact
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className='text-xl font-bold'>Contact Info</h3>
-                <ul className='mt-4 space-y-2 text-gray-300'>
-                  <li>132a Jones St.</li>
-                  <li>Sandersville, GA</li>
-                  <li>United States</li>
-                  <li>Phone: (770) 255-8346</li>
-                  <li>
-                    <a
-                      href='mailto:MGmedicalsurplus@yahoo.com'
-                      className='hover:text-white'
-                    >
-                      MGmedicalsurplus@yahoo.com
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className='mt-8 pt-8 border-t border-gray-700 text-center text-gray-300'>
-              <p>
-                &copy; {new Date().getFullYear()} MG Medical Surplus. All rights
-                reserved.
-              </p>
-            </div>
-          </div>
+          {/* Footer content */}
         </footer>
       </div>
     </Router>
