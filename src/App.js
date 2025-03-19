@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Products from './components/Products';
 import Contact from './components/Contact';
 import About from './components/About';
+import TidioChat from './components/TidioChat';
 import {
   BeakerIcon,
   ShieldCheckIcon,
@@ -477,58 +478,70 @@ function HomePage() {
   );
 }
 
+function TidioChat() {
+  useEffect(() => {
+    // Create a new script element
+    const script = document.createElement('script');
+
+    // Set the source to your Tidio chat widget
+    script.src = '//code.tidio.co/8wnd92ffwsoqcnuvmzm4vmvdgmfsyd1i.js';
+
+    // Make it load asynchronously to not block page rendering
+    script.async = true;
+
+    // Add the script to the document body
+    document.body.appendChild(script);
+
+    // Cleanup function that runs when component unmounts
+    return () => {
+      // Remove the script to prevent memory leaks
+      document.body.removeChild(script);
+    };
+  }, []); // Empty dependency array means this runs once on mount
+
+  return null; // Component doesn't render anything visible
+}
+
 function App() {
   return (
     <Router>
-      <div className='min-h-screen'>
+      <div className='min-h-screen bg-white'>
         {/* Navigation */}
-        <nav className='bg-white shadow-md'>
+        <nav className='bg-white shadow-lg'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <div className='flex justify-between h-16'>
-              <div className='flex items-center'>
-                <Link
-                  to='/'
-                  className='text-2xl font-bold text-primary flex items-center gap-2'
-                >
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                    strokeWidth={1.5}
-                    stroke='currentColor'
-                    className='w-8 h-8'
+              <div className='flex'>
+                <div className='flex-shrink-0 flex items-center'>
+                  <Link to='/' className='text-xl font-bold text-primary'>
+                    MG Medical Surplus
+                  </Link>
+                </div>
+                <div className='hidden sm:ml-6 sm:flex sm:space-x-8'>
+                  <Link
+                    to='/'
+                    className='border-transparent text-gray-500 hover:border-primary hover:text-primary inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'
                   >
-                    <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      d='M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z'
-                    />
-                  </svg>
-                  MG Medical Surplus
-                </Link>
-              </div>
-              <div className='hidden md:flex items-center space-x-8'>
-                <Link
-                  to='/products'
-                  className='text-secondary hover:text-primary'
-                >
-                  Products
-                </Link>
-                <Link to='/about' className='text-secondary hover:text-primary'>
-                  About Us
-                </Link>
-                <a
-                  href='/#contact'
-                  className='text-secondary hover:text-primary'
-                >
-                  Contact
-                </a>
-                <Link
-                  to='/contact'
-                  className='bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark'
-                >
-                  Request Quote
-                </Link>
+                    Home
+                  </Link>
+                  <Link
+                    to='/products'
+                    className='border-transparent text-gray-500 hover:border-primary hover:text-primary inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'
+                  >
+                    Products
+                  </Link>
+                  <Link
+                    to='/about'
+                    className='border-transparent text-gray-500 hover:border-primary hover:text-primary inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'
+                  >
+                    About
+                  </Link>
+                  <a
+                    href='/#contact'
+                    className='border-transparent text-gray-500 hover:border-primary hover:text-primary inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'
+                  >
+                    Contact
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -541,6 +554,9 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
         </Routes>
+
+        {/* Chat Widget */}
+        <TidioChat />
 
         {/* Footer */}
         <footer className='bg-secondary text-white'>
