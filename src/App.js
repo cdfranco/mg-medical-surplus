@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Products from './components/Products';
 import Contact from './components/Contact';
 import About from './components/About';
-import TidioChat from './components/TidioChat';
 import {
   BeakerIcon,
   ShieldCheckIcon,
@@ -356,9 +355,6 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
         </Routes>
-
-        {/* Chat Widget */}
-        <TidioChat />
 
         {/* Footer */}
         <footer className='bg-secondary text-white'>
