@@ -306,43 +306,55 @@ function HomePage() {
 function App() {
   return (
     <Router>
-      <div className='min-h-screen bg-white'>
+      <div className='min-h-screen'>
         {/* Navigation */}
-        <nav className='bg-white shadow-lg'>
+        <nav className='bg-white shadow-md'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <div className='flex justify-between h-16'>
-              <div className='flex'>
-                <div className='flex-shrink-0 flex items-center'>
-                  <Link to='/' className='text-xl font-bold text-primary'>
-                    MG Medical Surplus
-                  </Link>
-                </div>
-                <div className='hidden sm:ml-6 sm:flex sm:space-x-8'>
-                  <Link
-                    to='/'
-                    className='border-transparent text-gray-500 hover:border-primary hover:text-primary inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'
+              <div className='flex items-center'>
+                <Link
+                  to='/'
+                  className='text-2xl font-bold text-primary flex items-center gap-2'
+                >
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    strokeWidth={1.5}
+                    stroke='currentColor'
+                    className='w-8 h-8'
                   >
-                    Home
-                  </Link>
-                  <Link
-                    to='/products'
-                    className='border-transparent text-gray-500 hover:border-primary hover:text-primary inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'
-                  >
-                    Products
-                  </Link>
-                  <Link
-                    to='/about'
-                    className='border-transparent text-gray-500 hover:border-primary hover:text-primary inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'
-                  >
-                    About
-                  </Link>
-                  <a
-                    href='/#contact'
-                    className='border-transparent text-gray-500 hover:border-primary hover:text-primary inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'
-                  >
-                    Contact
-                  </a>
-                </div>
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      d='M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z'
+                    />
+                  </svg>
+                  MG Medical Surplus
+                </Link>
+              </div>
+              <div className='hidden md:flex items-center space-x-8'>
+                <Link
+                  to='/products'
+                  className='text-secondary hover:text-primary'
+                >
+                  Products
+                </Link>
+                <Link to='/about' className='text-secondary hover:text-primary'>
+                  About Us
+                </Link>
+                <a
+                  href='/#contact'
+                  className='text-secondary hover:text-primary'
+                >
+                  Contact
+                </a>
+                <Link
+                  to='/contact'
+                  className='bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark'
+                >
+                  Request Quote
+                </Link>
               </div>
             </div>
           </div>
