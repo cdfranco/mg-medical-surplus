@@ -41,19 +41,11 @@ function App() {
                 <Link to='/' className='flex items-center space-x-2 group'>
                   <div className='relative'>
                     <div className='absolute inset-0 bg-primary/20 rounded-full transform group-hover:scale-110 transition-transform duration-300'></div>
-                    <svg
-                      className='h-10 w-10 text-primary relative z-10 transform group-hover:rotate-12 transition-transform duration-300'
-                      fill='none'
-                      viewBox='0 0 24 24'
-                      stroke='currentColor'
-                    >
-                      <path
-                        strokeLinecap='round'
-                        strokeLinejoin='round'
-                        strokeWidth={2}
-                        d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'
-                      />
-                    </svg>
+                    <img
+                      src='/images/logo/medical-logo.svg'
+                      alt='MG Medical Surplus Logo'
+                      className='h-10 w-10 relative z-10 transform group-hover:rotate-12 transition-transform duration-300'
+                    />
                   </div>
                   <div>
                     <span className='text-xl font-extrabold text-gray-900 tracking-tight'>
@@ -142,19 +134,11 @@ function App() {
               {/* Company Info */}
               <div>
                 <div className='flex items-center space-x-2 mb-4'>
-                  <svg
-                    className='h-8 w-8 text-primary'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                    stroke='currentColor'
-                  >
-                    <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      strokeWidth={2}
-                      d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'
-                    />
-                  </svg>
+                  <img
+                    src='/images/logo/medical-logo.svg'
+                    alt='MG Medical Surplus Logo'
+                    className='h-8 w-8'
+                  />
                   <span className='text-xl font-bold tracking-tight'>
                     MG Medical Surplus
                   </span>
