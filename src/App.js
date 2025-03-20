@@ -1,376 +1,354 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import './styles/App.css';
+import HomePage from './components/HomePage';
 import Products from './components/Products';
-import Contact from './components/Contact';
 import About from './components/About';
-import {
-  BeakerIcon,
-  ShieldCheckIcon,
-  TruckIcon,
-  UserGroupIcon,
-} from '@heroicons/react/24/outline';
-
-function HomePage() {
-  return (
-    <>
-      {/* Hero Section */}
-      <div className='bg-gradient-to-r from-blue-50 to-blue-100'>
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20'>
-          <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
-            <div className='text-left'>
-              <h1 className='text-4xl tracking-tight font-extrabold text-secondary sm:text-5xl md:text-6xl'>
-                Quality Medical Equipment
-                <span className='block text-primary mt-2'>
-                  For Healthcare Facilities
-                </span>
-              </h1>
-              <p className='mt-6 text-lg text-gray-600 sm:text-xl max-w-xl'>
-                Your trusted source for quality pre-owned medical equipment.
-                Serving hospitals, surgery centers, clinics, and doctors'
-                offices throughout Middle Georgia, including Augusta, Macon,
-                Sandersville, Eatonton, and Greensboro.
-              </p>
-              <div className='mt-8 flex flex-col sm:flex-row gap-4'>
-                <a
-                  href='#contact'
-                  className='inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary-dark md:py-4 md:text-lg md:px-10 transition duration-150 ease-in-out'
-                >
-                  Sell Equipment
-                </a>
-                <Link
-                  to='/products'
-                  className='inline-flex items-center justify-center px-8 py-3 border border-primary text-base font-medium rounded-md text-primary bg-white hover:bg-blue-50 md:py-4 md:text-lg md:px-10 transition duration-150 ease-in-out'
-                >
-                  View Inventory
-                </Link>
-              </div>
-            </div>
-            <div className='relative h-[500px] rounded-[40px] overflow-hidden shadow-2xl'>
-              <div className='absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent z-10'></div>
-              <img
-                src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80'
-                alt='Happy Female Medical Professional'
-                className='absolute inset-0 w-full h-full object-cover'
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Featured Products Section */}
-      <div className='bg-white py-16'>
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-          <div className='text-center'>
-            <h2 className='text-3xl font-extrabold text-secondary sm:text-4xl'>
-              Featured Medical Equipment
-            </h2>
-            <p className='mt-4 text-lg text-gray-500'>
-              Discover our range of state-of-the-art medical equipment
-            </p>
-          </div>
-          <div className='mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3'>
-            <div className='bg-gray-50 rounded-lg overflow-hidden shadow-md'>
-              <img
-                src='https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80'
-                alt='MRI Machine'
-                className='w-full h-48 object-cover'
-              />
-              <div className='p-6'>
-                <h3 className='text-lg font-medium text-secondary'>
-                  MRI Systems
-                </h3>
-                <p className='mt-2 text-gray-500'>
-                  Advanced imaging solutions with superior diagnostic
-                  capabilities
-                </p>
-              </div>
-            </div>
-            <div className='bg-gray-50 rounded-lg overflow-hidden shadow-md'>
-              <img
-                src='https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80'
-                alt='Ultrasound System'
-                className='w-full h-48 object-cover'
-              />
-              <div className='p-6'>
-                <h3 className='text-lg font-medium text-secondary'>
-                  Ultrasound Systems
-                </h3>
-                <p className='mt-2 text-gray-500'>
-                  High-resolution imaging for precise diagnostics
-                </p>
-              </div>
-            </div>
-            <div className='bg-gray-50 rounded-lg overflow-hidden shadow-md'>
-              <img
-                src='https://images.unsplash.com/photo-1530026405186-ed1f139313f8'
-                alt='Patient Monitor'
-                className='w-full h-48 object-cover'
-              />
-              <div className='p-6'>
-                <h3 className='text-lg font-medium text-secondary'>
-                  Patient Monitoring
-                </h3>
-                <p className='mt-2 text-gray-500'>
-                  Comprehensive vital signs monitoring solutions
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Features Section */}
-      <div className='py-16 bg-white'>
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-          <div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4'>
-            <div className='text-center'>
-              <div className='flex justify-center'>
-                <BeakerIcon className='h-12 w-12 text-primary' />
-              </div>
-              <h3 className='mt-4 text-lg font-medium text-secondary'>
-                Latest Technology
-              </h3>
-              <p className='mt-2 text-gray-500'>
-                Cutting-edge medical equipment with advanced features
-              </p>
-            </div>
-            <div className='text-center'>
-              <div className='flex justify-center'>
-                <ShieldCheckIcon className='h-12 w-12 text-primary' />
-              </div>
-              <h3 className='mt-4 text-lg font-medium text-secondary'>
-                Quality Assured
-              </h3>
-              <p className='mt-2 text-gray-500'>
-                All products meet strict quality and safety standards
-              </p>
-            </div>
-            <div className='text-center'>
-              <div className='flex justify-center'>
-                <TruckIcon className='h-12 w-12 text-primary' />
-              </div>
-              <h3 className='mt-4 text-lg font-medium text-secondary'>
-                Fast Delivery
-              </h3>
-              <p className='mt-2 text-gray-500'>
-                Quick shipping and professional installation
-              </p>
-            </div>
-            <div className='text-center'>
-              <div className='flex justify-center'>
-                <UserGroupIcon className='h-12 w-12 text-primary' />
-              </div>
-              <h3 className='mt-4 text-lg font-medium text-secondary'>
-                Expert Support
-              </h3>
-              <p className='mt-2 text-gray-500'>
-                24/7 technical support and maintenance
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Trust Section */}
-      <div className='bg-gray-50 py-16'>
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-          <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
-            <div className='relative h-64 sm:h-72 md:h-96 lg:h-full'>
-              <div className='absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent z-10'></div>
-              <img
-                src='https://images.unsplash.com/photo-1559839734-2b71ea197ec2'
-                alt='Confident Medical Professional'
-                className='absolute inset-0 w-full h-full object-cover rounded-lg shadow-xl'
-              />
-            </div>
-            <div>
-              <h2 className='text-3xl font-extrabold text-secondary sm:text-4xl'>
-                Trusted by Healthcare Professionals
-              </h2>
-              <p className='mt-4 text-lg text-gray-500'>
-                With over two decades of experience in medical equipment
-                solutions, we've earned the trust of healthcare professionals
-                worldwide. Our commitment to quality and service excellence
-                makes us the preferred choice for medical facilities.
-              </p>
-              <div className='mt-8 grid grid-cols-2 gap-4'>
-                <div className='bg-white p-4 rounded-lg shadow'>
-                  <div className='text-2xl font-bold text-primary'>2000+</div>
-                  <div className='text-gray-500'>Satisfied Clients</div>
-                </div>
-                <div className='bg-white p-4 rounded-lg shadow'>
-                  <div className='text-2xl font-bold text-primary'>24/7</div>
-                  <div className='text-gray-500'>Technical Support</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Testimonials Section */}
-      <div className='bg-white py-16'>
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-          <div className='text-center'>
-            <h2 className='text-3xl font-extrabold text-secondary sm:text-4xl'>
-              What Our Clients Say
-            </h2>
-            <p className='mt-4 text-lg text-gray-500'>
-              Trusted by healthcare professionals across Georgia
-            </p>
-          </div>
-          <div className='mt-12 grid grid-cols-1 gap-8 md:grid-cols-3'>
-            {/* Testimonial 1 */}
-            <div className='bg-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300'>
-              <div className='flex items-center mb-6'>
-                <img
-                  className='h-12 w-12 rounded-full object-cover'
-                  src='https://images.unsplash.com/photo-1622253692010-333f2da6031d'
-                  alt='Doctor'
-                />
-                <div className='ml-4'>
-                  <p className='text-lg font-semibold text-secondary'>
-                    Dr. Sarah Johnson
-                  </p>
-                  <p className='text-gray-500'>
-                    Medical Director, Augusta Clinic
-                  </p>
-                </div>
-              </div>
-              <p className='text-gray-600 italic'>
-                "The quality of their refurbished medical equipment is
-                outstanding. Their attention to detail and professional service
-                has made them our go-to supplier."
-              </p>
-            </div>
-            {/* Testimonial 2 */}
-            <div className='bg-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300'>
-              <div className='flex items-center mb-6'>
-                <img
-                  className='h-12 w-12 rounded-full object-cover'
-                  src='https://images.unsplash.com/photo-1612349317150-e413f6a5b16d'
-                  alt='Doctor'
-                />
-                <div className='ml-4'>
-                  <p className='text-lg font-semibold text-secondary'>
-                    Dr. Michael Chen
-                  </p>
-                  <p className='text-gray-500'>
-                    Chief of Surgery, Macon Hospital
-                  </p>
-                </div>
-              </div>
-              <p className='text-gray-600 italic'>
-                "Their commitment to quality and customer service is
-                exceptional. The equipment we purchased has been reliable and
-                cost-effective."
-              </p>
-            </div>
-            {/* Testimonial 3 */}
-            <div className='bg-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300'>
-              <div className='flex items-center mb-6'>
-                <img
-                  className='h-12 w-12 rounded-full object-cover'
-                  src='https://images.unsplash.com/photo-1594824476967-48c8b964273f'
-                  alt='Doctor'
-                />
-                <div className='ml-4'>
-                  <p className='text-lg font-semibold text-secondary'>
-                    Dr. Emily Martinez
-                  </p>
-                  <p className='text-gray-500'>
-                    Owner, Eatonton Medical Center
-                  </p>
-                </div>
-              </div>
-              <p className='text-gray-600 italic'>
-                "MG Medical Surplus has been instrumental in helping us expand
-                our practice. Their equipment and support are top-notch."
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Contact Section */}
-      <div
-        id='contact'
-        className='bg-gradient-to-br from-blue-50 via-white to-blue-50'
-      >
-        <Contact />
-      </div>
-    </>
-  );
-}
+import Contact from './components/Contact';
+import Quote from './components/Quote';
 
 function App() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 20;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    document.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
+
   return (
     <Router>
-      <div className='min-h-screen'>
-        {/* Navigation */}
-        <nav className='bg-white shadow-md'>
-          <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+      <div className='min-h-screen flex flex-col bg-white'>
+        {/* Header */}
+        <header
+          className={`transition-all duration-300 fixed w-full z-50 ${
+            scrolled
+              ? 'bg-white/95 backdrop-blur-sm shadow-md'
+              : 'bg-transparent py-2'
+          }`}
+        >
+          <nav className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <div className='flex justify-between h-16'>
               <div className='flex items-center'>
+                <Link to='/' className='flex items-center space-x-2 group'>
+                  <div className='relative'>
+                    <div className='absolute inset-0 bg-primary/20 rounded-full transform group-hover:scale-110 transition-transform duration-300'></div>
+                    <svg
+                      className='h-10 w-10 text-primary relative z-10 transform group-hover:rotate-12 transition-transform duration-300'
+                      fill='none'
+                      viewBox='0 0 24 24'
+                      stroke='currentColor'
+                    >
+                      <path
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        strokeWidth={2}
+                        d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <span className='text-xl font-extrabold text-gray-900 tracking-tight'>
+                      MG <span className='text-primary'>Medical Surplus</span>
+                    </span>
+                    <span className='block text-xs font-medium text-gray-500 tracking-wider'>
+                      PREMIUM EQUIPMENT
+                    </span>
+                  </div>
+                </Link>
+              </div>
+
+              <div className='flex items-center space-x-1 sm:space-x-4'>
                 <Link
                   to='/'
-                  className='text-2xl font-bold text-primary flex items-center gap-2'
+                  className='px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary relative group transition-colors'
                 >
+                  Home
+                  <span className='absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300'></span>
+                </Link>
+                <Link
+                  to='/products'
+                  className='px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary relative group transition-colors'
+                >
+                  Products
+                  <span className='absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300'></span>
+                </Link>
+                <Link
+                  to='/about'
+                  className='px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary relative group transition-colors'
+                >
+                  About
+                  <span className='absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300'></span>
+                </Link>
+                <Link
+                  to='/contact'
+                  className='px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary relative group transition-colors'
+                >
+                  Contact
+                  <span className='absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300'></span>
+                </Link>
+                <Link
+                  to='/quote'
+                  className='inline-flex items-center px-4 py-2 border-2 border-primary text-sm font-medium rounded-lg text-primary hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-300 ml-3'
+                >
+                  <span>Request Quote</span>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
+                    className='h-4 w-4 ml-2'
                     fill='none'
                     viewBox='0 0 24 24'
-                    strokeWidth={1.5}
                     stroke='currentColor'
-                    className='w-8 h-8'
                   >
                     <path
                       strokeLinecap='round'
                       strokeLinejoin='round'
-                      d='M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z'
+                      strokeWidth={2}
+                      d='M17 8l4 4m0 0l-4 4m4-4H3'
                     />
                   </svg>
-                  MG Medical Surplus
-                </Link>
-              </div>
-              <div className='hidden md:flex items-center space-x-8'>
-                <Link
-                  to='/products'
-                  className='text-secondary hover:text-primary'
-                >
-                  Products
-                </Link>
-                <Link to='/about' className='text-secondary hover:text-primary'>
-                  About Us
-                </Link>
-                <a
-                  href='/#contact'
-                  className='text-secondary hover:text-primary'
-                >
-                  Contact
-                </a>
-                <Link
-                  to='/contact'
-                  className='bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark'
-                >
-                  Request Quote
                 </Link>
               </div>
             </div>
-          </div>
-        </nav>
+          </nav>
+        </header>
 
-        {/* Routes */}
-        <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/products' element={<Products />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/contact' element={<Contact />} />
-        </Routes>
+        {/* Main Content */}
+        <main className='flex-grow pt-16'>
+          <Routes>
+            <Route path='/' element={<HomePage />} />
+            <Route path='/products' element={<Products />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/quote' element={<Quote />} />
+          </Routes>
+        </main>
 
         {/* Footer */}
-        <footer className='bg-secondary text-white'>
-          {/* Footer content */}
+        <footer className='bg-gradient-to-br from-gray-900 to-gray-800 text-white relative overflow-hidden'>
+          <div className='absolute inset-0 opacity-10'>
+            <div className='absolute -top-40 -right-40 w-80 h-80 bg-primary rounded-full'></div>
+            <div className='absolute -bottom-40 -left-40 w-80 h-80 bg-secondary rounded-full'></div>
+          </div>
+          <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+              {/* Company Info */}
+              <div>
+                <div className='flex items-center space-x-2 mb-4'>
+                  <svg
+                    className='h-8 w-8 text-primary'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    stroke='currentColor'
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth={2}
+                      d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'
+                    />
+                  </svg>
+                  <span className='text-xl font-bold tracking-tight'>
+                    MG Medical Surplus
+                  </span>
+                </div>
+                <p className='text-gray-400 mb-6'>
+                  Your trusted source for high-quality medical equipment and
+                  supplies.
+                </p>
+                <div className='flex space-x-4'>
+                  <a
+                    href='https://www.facebook.com/MGMedicalSurplus'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='text-gray-400 hover:text-white transition-colors p-2 border border-gray-700 rounded-full hover:border-primary'
+                  >
+                    <svg
+                      className='h-5 w-5'
+                      fill='currentColor'
+                      viewBox='0 0 24 24'
+                    >
+                      <path
+                        fillRule='evenodd'
+                        d='M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z'
+                        clipRule='evenodd'
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              {/* Quick Links */}
+              <div>
+                <h3 className='text-lg font-semibold mb-4 inline-block pb-1 border-b-2 border-primary'>
+                  Quick Links
+                </h3>
+                <ul className='space-y-2'>
+                  <li>
+                    <Link
+                      to='/products'
+                      className='text-gray-400 hover:text-primary transition-colors flex items-center group'
+                    >
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        className='h-4 w-4 mr-2 transform group-hover:translate-x-1 transition-transform'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke='currentColor'
+                      >
+                        <path
+                          strokeLinecap='round'
+                          strokeLinejoin='round'
+                          strokeWidth={2}
+                          d='M9 5l7 7-7 7'
+                        />
+                      </svg>
+                      Products
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to='/about'
+                      className='text-gray-400 hover:text-primary transition-colors flex items-center group'
+                    >
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        className='h-4 w-4 mr-2 transform group-hover:translate-x-1 transition-transform'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke='currentColor'
+                      >
+                        <path
+                          strokeLinecap='round'
+                          strokeLinejoin='round'
+                          strokeWidth={2}
+                          d='M9 5l7 7-7 7'
+                        />
+                      </svg>
+                      About Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to='/contact'
+                      className='text-gray-400 hover:text-primary transition-colors flex items-center group'
+                    >
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        className='h-4 w-4 mr-2 transform group-hover:translate-x-1 transition-transform'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke='currentColor'
+                      >
+                        <path
+                          strokeLinecap='round'
+                          strokeLinejoin='round'
+                          strokeWidth={2}
+                          d='M9 5l7 7-7 7'
+                        />
+                      </svg>
+                      Contact
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Contact Info */}
+              <div>
+                <h3 className='text-lg font-semibold mb-4 inline-block pb-1 border-b-2 border-primary'>
+                  Contact Info
+                </h3>
+                <ul className='space-y-4 text-gray-400'>
+                  <li className='flex items-start'>
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      className='h-5 w-5 mr-2 text-primary'
+                      fill='none'
+                      viewBox='0 0 24 24'
+                      stroke='currentColor'
+                    >
+                      <path
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        strokeWidth={2}
+                        d='M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z'
+                      />
+                      <path
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        strokeWidth={2}
+                        d='M15 11a3 3 0 11-6 0 3 3 0 016 0z'
+                      />
+                    </svg>
+                    <div>
+                      123 Medical Plaza
+                      <br />
+                      Augusta, GA 30901
+                    </div>
+                  </li>
+                  <li className='flex items-center'>
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      className='h-5 w-5 mr-2 text-primary'
+                      fill='none'
+                      viewBox='0 0 24 24'
+                      stroke='currentColor'
+                    >
+                      <path
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        strokeWidth={2}
+                        d='M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z'
+                      />
+                    </svg>
+                    <a
+                      href='tel:+17702558346'
+                      className='hover:text-primary transition-colors'
+                    >
+                      (770) 255-8346
+                    </a>
+                  </li>
+                  <li className='flex items-center'>
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      className='h-5 w-5 mr-2 text-primary'
+                      fill='none'
+                      viewBox='0 0 24 24'
+                      stroke='currentColor'
+                    >
+                      <path
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        strokeWidth={2}
+                        d='M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'
+                      />
+                    </svg>
+                    <a
+                      href='mailto:MGmedicalsurplus@yahoo.com'
+                      className='hover:text-primary transition-colors'
+                    >
+                      MGmedicalsurplus@yahoo.com
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Copyright */}
+            <div className='mt-10 pt-8 border-t border-gray-800 text-center text-gray-400'>
+              <p className='text-sm'>
+                © {new Date().getFullYear()} MG Medical Surplus. All rights
+                reserved.
+              </p>
+            </div>
+          </div>
         </footer>
       </div>
     </Router>
