@@ -120,55 +120,47 @@ function HomePage() {
 
       {/* Brands Marquee */}
       <section className='marquee-container'>
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-          <p className='marquee-title'>Trusted by leading medical brands</p>
+        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>
+          <div className='flex justify-center'>
+            <p className='marquee-title'>Serving Middle Georgia and More</p>
+          </div>
         </div>
         <div className='marquee-content'>
-          {/* First set of logos */}
-          <div className='brand-logo'>
-            <img src='/images/brands/ge-healthcare.svg' alt='GE Healthcare' />
-          </div>
-          <div className='brand-logo'>
-            <img src='/images/brands/philips.svg' alt='Philips' />
-          </div>
-          <div className='brand-logo'>
-            <img src='/images/brands/siemens.svg' alt='Siemens Healthineers' />
-          </div>
-          <div className='brand-logo'>
-            <img src='/images/brands/medtronic.svg' alt='Medtronic' />
-          </div>
-          <div className='brand-logo'>
-            <img src='/images/brands/stryker.svg' alt='Stryker' />
-          </div>
-          <div className='brand-logo'>
-            <img
-              src='/images/brands/cardinal-health.svg'
-              alt='Cardinal Health'
-            />
-          </div>
+          {/* First set of locations */}
+          <div className='brand-logo location-text'>Augusta</div>
+          <div className='brand-logo location-text'>Macon</div>
+          <div className='brand-logo location-text'>Warner Robins</div>
+          <div className='brand-logo location-text'>Perry</div>
+          <div className='brand-logo location-text'>Milledgeville</div>
+          <div className='brand-logo location-text'>Eastman</div>
+          <div className='brand-logo location-text'>Cochran</div>
+          <div className='brand-logo location-text'>Forsyth</div>
+          <div className='brand-logo location-text'>Dublin</div>
+          <div className='brand-logo location-text'>Sandersville</div>
+          <div className='brand-logo location-text'>Eatonton</div>
+          <div className='brand-logo location-text'>Greensboro</div>
+          <div className='brand-logo location-text'>Gray</div>
+          <div className='brand-logo location-text'>Fort Valley</div>
+          <div className='brand-logo location-text'>Hawkinsville</div>
+          <div className='brand-logo location-text'>Centerville</div>
 
-          {/* Duplicate the logos to ensure a seamless infinite scroll */}
-          <div className='brand-logo'>
-            <img src='/images/brands/ge-healthcare.svg' alt='GE Healthcare' />
-          </div>
-          <div className='brand-logo'>
-            <img src='/images/brands/philips.svg' alt='Philips' />
-          </div>
-          <div className='brand-logo'>
-            <img src='/images/brands/siemens.svg' alt='Siemens Healthineers' />
-          </div>
-          <div className='brand-logo'>
-            <img src='/images/brands/medtronic.svg' alt='Medtronic' />
-          </div>
-          <div className='brand-logo'>
-            <img src='/images/brands/stryker.svg' alt='Stryker' />
-          </div>
-          <div className='brand-logo'>
-            <img
-              src='/images/brands/cardinal-health.svg'
-              alt='Cardinal Health'
-            />
-          </div>
+          {/* Duplicate the locations to ensure a seamless infinite scroll */}
+          <div className='brand-logo location-text'>Augusta</div>
+          <div className='brand-logo location-text'>Macon</div>
+          <div className='brand-logo location-text'>Warner Robins</div>
+          <div className='brand-logo location-text'>Perry</div>
+          <div className='brand-logo location-text'>Milledgeville</div>
+          <div className='brand-logo location-text'>Eastman</div>
+          <div className='brand-logo location-text'>Cochran</div>
+          <div className='brand-logo location-text'>Forsyth</div>
+          <div className='brand-logo location-text'>Dublin</div>
+          <div className='brand-logo location-text'>Sandersville</div>
+          <div className='brand-logo location-text'>Eatonton</div>
+          <div className='brand-logo location-text'>Greensboro</div>
+          <div className='brand-logo location-text'>Gray</div>
+          <div className='brand-logo location-text'>Fort Valley</div>
+          <div className='brand-logo location-text'>Hawkinsville</div>
+          <div className='brand-logo location-text'>Centerville</div>
         </div>
       </section>
 
