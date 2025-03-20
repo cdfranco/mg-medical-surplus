@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Contact from './Contact';
+import '../styles/marquee.css';
 
 function HomePage() {
   return (
@@ -114,6 +115,60 @@ function HomePage() {
               d='M0,96L60,128C120,160,240,224,360,229.3C480,235,600,181,720,149.3C840,117,960,107,1080,117.3C1200,128,1320,160,1380,176L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z'
             ></path>
           </svg>
+        </div>
+      </section>
+
+      {/* Brands Marquee */}
+      <section className='marquee-container'>
+        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+          <p className='marquee-title'>Trusted by leading medical brands</p>
+        </div>
+        <div className='marquee-content'>
+          {/* First set of logos */}
+          <div className='brand-logo'>
+            <img src='/images/brands/ge-healthcare.svg' alt='GE Healthcare' />
+          </div>
+          <div className='brand-logo'>
+            <img src='/images/brands/philips.svg' alt='Philips' />
+          </div>
+          <div className='brand-logo'>
+            <img src='/images/brands/siemens.svg' alt='Siemens Healthineers' />
+          </div>
+          <div className='brand-logo'>
+            <img src='/images/brands/medtronic.svg' alt='Medtronic' />
+          </div>
+          <div className='brand-logo'>
+            <img src='/images/brands/stryker.svg' alt='Stryker' />
+          </div>
+          <div className='brand-logo'>
+            <img
+              src='/images/brands/cardinal-health.svg'
+              alt='Cardinal Health'
+            />
+          </div>
+
+          {/* Duplicate the logos to ensure a seamless infinite scroll */}
+          <div className='brand-logo'>
+            <img src='/images/brands/ge-healthcare.svg' alt='GE Healthcare' />
+          </div>
+          <div className='brand-logo'>
+            <img src='/images/brands/philips.svg' alt='Philips' />
+          </div>
+          <div className='brand-logo'>
+            <img src='/images/brands/siemens.svg' alt='Siemens Healthineers' />
+          </div>
+          <div className='brand-logo'>
+            <img src='/images/brands/medtronic.svg' alt='Medtronic' />
+          </div>
+          <div className='brand-logo'>
+            <img src='/images/brands/stryker.svg' alt='Stryker' />
+          </div>
+          <div className='brand-logo'>
+            <img
+              src='/images/brands/cardinal-health.svg'
+              alt='Cardinal Health'
+            />
+          </div>
         </div>
       </section>
 
