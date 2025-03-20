@@ -1,11 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {
-  BeakerIcon,
-  ShieldCheckIcon,
-  TruckIcon,
-  UserGroupIcon,
-} from '@heroicons/react/24/outline';
 import Contact from './Contact';
 
 function HomePage() {

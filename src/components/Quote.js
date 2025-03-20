@@ -163,13 +163,13 @@ function Quote() {
         <div className='mt-12 text-center text-sm text-gray-500'>
           <p>
             By submitting this form, you agree to our{' '}
-            <a href='#' className='text-primary hover:text-primary-dark'>
+            <button className='text-primary hover:text-primary-dark underline focus:outline-none'>
               Privacy Policy
-            </a>{' '}
+            </button>{' '}
             and{' '}
-            <a href='#' className='text-primary hover:text-primary-dark'>
+            <button className='text-primary hover:text-primary-dark underline focus:outline-none'>
               Terms of Service
-            </a>
+            </button>
             .
           </p>
         </div>
