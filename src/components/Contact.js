@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
+import emailjs from '@emailjs/browser';
 import '../styles/animations.css';
 
 function Contact() {
   const location = useLocation();
+  const formRef = useRef();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,6 +13,11 @@ function Contact() {
     organization: '',
     equipmentType: '',
     message: '',
+  });
+  const [submitStatus, setSubmitStatus] = useState({
+    submitting: false,
+    success: null,
+    error: null,
   });
 
   useEffect(() => {
@@ -32,26 +39,40 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setSubmitStatus({ submitting: true, success: null, error: null });
 
-    // Create email body with form data
-    const emailBody = `
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Organization: ${formData.organization}
-Equipment Type: ${formData.equipmentType}
-
-Additional Details:
-${formData.message}
-    `.trim();
-
-    // Create mailto link with form data
-    const mailtoLink = `mailto:MGmedicalsurplus@yahoo.com?subject=Quote Request: ${
-      formData.equipmentType
-    }&body=${encodeURIComponent(emailBody)}`;
-
-    // Open email client
-    window.location.href = mailtoLink;
+    // Using EmailJS to send the form directly without opening email client
+    emailjs
+      .sendForm(
+        'service_mqzz0ao', // Replace with your EmailJS service ID
+        'template_k5rp6sl', // Replace with your EmailJS template ID
+        formRef.current,
+        'RFxoHiJMDc_nBXwfo' // Replace with your EmailJS public key
+      )
+      .then((result) => {
+        setSubmitStatus({
+          submitting: false,
+          success: 'Your message has been sent successfully!',
+          error: null,
+        });
+        // Reset form after successful submission
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          organization: '',
+          equipmentType: '',
+          message: '',
+        });
+      })
+      .catch((error) => {
+        setSubmitStatus({
+          submitting: false,
+          success: null,
+          error: 'There was an error sending your message. Please try again.',
+        });
+        console.error('EmailJS error:', error);
+      });
   };
 
   return (
@@ -78,7 +99,20 @@ ${formData.message}
             <h3 className='text-2xl font-semibold text-gray-900 mb-6'>
               Send Us a Message
             </h3>
-            <form onSubmit={handleSubmit} className='space-y-6'>
+
+            {submitStatus.success && (
+              <div className='mb-6 p-4 bg-green-100 border-l-4 border-green-500 text-green-700 rounded'>
+                <p>{submitStatus.success}</p>
+              </div>
+            )}
+
+            {submitStatus.error && (
+              <div className='mb-6 p-4 bg-red-100 border-l-4 border-red-500 text-red-700 rounded'>
+                <p>{submitStatus.error}</p>
+              </div>
+            )}
+
+            <form ref={formRef} onSubmit={handleSubmit} className='space-y-6'>
               <div className='space-y-5'>
                 <div>
                   <label
@@ -290,9 +324,14 @@ ${formData.message}
                 <p className='text-sm text-gray-500'>* Required fields</p>
                 <button
                   type='submit'
-                  className='inline-flex items-center px-6 py-3 border-2 border-primary bg-primary text-base font-medium rounded-xl text-white hover:bg-transparent hover:text-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-300 shadow-lg'
+                  disabled={submitStatus.submitting}
+                  className={`inline-flex items-center px-6 py-3 border-2 border-primary bg-primary text-base font-medium rounded-xl text-white hover:bg-transparent hover:text-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-300 shadow-lg ${
+                    submitStatus.submitting
+                      ? 'opacity-70 cursor-not-allowed'
+                      : ''
+                  }`}
                 >
-                  Send Message
+                  {submitStatus.submitting ? 'Sending...' : 'Send Message'}
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     className='h-5 w-5 ml-2'
@@ -367,10 +406,10 @@ ${formData.message}
                     <div className='ml-4'>
                       <h4 className='text-lg font-medium'>Email</h4>
                       <a
-                        href='mailto:MGmedicalsurplus@yahoo.com'
+                        href='mailto:contact@mgmedicalsurplus.com'
                         className='text-white/80 hover:text-white transition-colors block mt-1'
                       >
-                        MGmedicalsurplus@yahoo.com
+                        contact@mgmedicalsurplus.com
                       </a>
                     </div>
                   </div>
@@ -400,9 +439,9 @@ ${formData.message}
                     <div className='ml-4'>
                       <h4 className='text-lg font-medium'>Address</h4>
                       <p className='text-white/80 mt-1'>
-                        123 Medical Plaza
+                        132a Jones St.
                         <br />
-                        Augusta, GA 30901
+                        Sandersville, GA
                       </p>
                     </div>
                   </div>
