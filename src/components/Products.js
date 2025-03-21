@@ -54,7 +54,7 @@ const products = [
         description:
           'Advanced magnetic resonance imaging systems for detailed diagnostic imaging',
         image:
-          'https://images.unsplash.com/photo-1516069677018-378761110b87?w=600&h=400&fit=crop&auto=format',
+          'https://images.unsplash.com/photo-1583912086096-8c60d75a53f9?w=600&h=400&fit=crop&auto=format',
         price: 150000,
       },
       {
@@ -118,7 +118,7 @@ const products = [
         name: 'Surgical Lights',
         description: 'LED surgical lighting systems for optimal visualization',
         image:
-          'https://images.unsplash.com/photo-1571772996211-2f02974dc681?w=600&h=400&fit=crop&auto=format',
+          'https://images.unsplash.com/photo-1587843416084-0468cc3b9d69?w=600&h=400&fit=crop&auto=format',
         price: 15000,
       },
     ],
