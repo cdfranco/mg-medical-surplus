@@ -47,7 +47,7 @@ function Contact() {
         'service_mqzz0ao', // Replace with your EmailJS service ID
         'template_k5rp6sl', // Replace with your EmailJS template ID
         formRef.current,
-        'RFxoHiJMDc_nBXwfo' // Replace with your EmailJS public key
+        'NkpurUmfE1kJSefs6' // Your EmailJS public key
       )
       .then((result) => {
         setSubmitStatus({
