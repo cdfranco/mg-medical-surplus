@@ -1,30 +1,23 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import emailjs from '@emailjs/browser';
 import '../styles/animations.css';
 
 function Contact() {
   const location = useLocation();
-  const formRef = useRef();
   const [formData, setFormData] = useState({
-    from_name: '',
-    from_email: '',
+    name: '',
+    email: '',
     phone: '',
     organization: '',
-    equipment_type: '',
+    equipmentType: '',
     message: '',
-  });
-  const [submitStatus, setSubmitStatus] = useState({
-    submitting: false,
-    success: null,
-    error: null,
   });
 
   useEffect(() => {
     if (location.state?.equipmentType) {
       setFormData((prev) => ({
         ...prev,
-        equipment_type: location.state.equipmentType,
+        equipmentType: location.state.equipmentType,
       }));
     }
   }, [location.state]);
@@ -39,42 +32,26 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitStatus({ submitting: true, success: null, error: null });
 
-    // Using EmailJS to send the form directly without opening email client
-    emailjs
-      .sendForm(
-        'service_ooqmm6o', // Your EmailJS service ID - Gmail or SMTP service you created in EmailJS
-        'template_zx7zs4c', // Your EmailJS template ID - Contact Form template in EmailJS
-        formRef.current,
-        'NkpurUmfE1kJSefs6' // Your EmailJS public key
-      )
-      .then((result) => {
-        setSubmitStatus({
-          submitting: false,
-          success: 'Your message has been sent successfully!',
-          error: null,
-        });
-        // Reset form after successful submission
-        setFormData({
-          from_name: '',
-          from_email: '',
-          phone: '',
-          organization: '',
-          equipment_type: '',
-          message: '',
-        });
-      })
-      .catch((error) => {
-        setSubmitStatus({
-          submitting: false,
-          success: null,
-          error: `Error sending message: ${
-            error.text || error.message || 'Unknown error'
-          }. Please check your EmailJS configuration.`,
-        });
-        console.error('EmailJS error details:', error);
-      });
+    // Create email body with form data
+    const emailBody = `
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Organization: ${formData.organization}
+Equipment Type: ${formData.equipmentType}
+
+Additional Details:
+${formData.message}
+    `.trim();
+
+    // Create mailto link with form data
+    const mailtoLink = `mailto:contact@mgmedicalsurplus.com?subject=Quote Request: ${
+      formData.equipmentType
+    }&body=${encodeURIComponent(emailBody)}`;
+
+    // Open email client
+    window.location.href = mailtoLink;
   };
 
   return (
@@ -102,24 +79,7 @@ function Contact() {
               Send Us a Message
             </h3>
 
-            {submitStatus.success && (
-              <div className='mb-6 p-4 bg-green-100 border-l-4 border-green-500 text-green-700 rounded'>
-                <p>{submitStatus.success}</p>
-              </div>
-            )}
-
-            {submitStatus.error && (
-              <div className='mb-6 p-4 bg-red-100 border-l-4 border-red-500 text-red-700 rounded'>
-                <p>{submitStatus.error}</p>
-              </div>
-            )}
-
-            <form ref={formRef} onSubmit={handleSubmit} className='space-y-6'>
-              <input
-                type='hidden'
-                name='subject'
-                value={`Quote Request: ${formData.equipment_type}`}
-              />
+            <form onSubmit={handleSubmit} className='space-y-6'>
               <div className='space-y-5'>
                 <div>
                   <label
@@ -147,10 +107,10 @@ function Contact() {
                     </div>
                     <input
                       type='text'
-                      name='from_name'
+                      name='name'
                       id='name'
                       required
-                      value={formData.from_name}
+                      value={formData.name}
                       onChange={handleChange}
                       className='block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-xl shadow-sm focus:ring-2 focus:ring-primary focus:border-transparent'
                       placeholder='John Doe'
@@ -185,10 +145,10 @@ function Contact() {
                       </div>
                       <input
                         type='email'
-                        name='from_email'
+                        name='email'
                         id='email'
                         required
-                        value={formData.from_email}
+                        value={formData.email}
                         onChange={handleChange}
                         className='block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-xl shadow-sm focus:ring-2 focus:ring-primary focus:border-transparent'
                         placeholder='you@example.com'
@@ -295,10 +255,10 @@ function Contact() {
                     </div>
                     <input
                       type='text'
-                      name='equipment_type'
+                      name='equipmentType'
                       id='equipmentType'
                       required
-                      value={formData.equipment_type}
+                      value={formData.equipmentType}
                       onChange={handleChange}
                       className='block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-xl shadow-sm focus:ring-2 focus:ring-primary focus:border-transparent'
                       placeholder='e.g., MRI Machine, Ultrasound System'
@@ -331,14 +291,9 @@ function Contact() {
                 <p className='text-sm text-gray-500'>* Required fields</p>
                 <button
                   type='submit'
-                  disabled={submitStatus.submitting}
-                  className={`inline-flex items-center px-6 py-3 border-2 border-primary bg-primary text-base font-medium rounded-xl text-white hover:bg-transparent hover:text-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-300 shadow-lg ${
-                    submitStatus.submitting
-                      ? 'opacity-70 cursor-not-allowed'
-                      : ''
-                  }`}
+                  className='inline-flex items-center px-6 py-3 border-2 border-primary bg-primary text-base font-medium rounded-xl text-white hover:bg-transparent hover:text-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-300 shadow-lg'
                 >
-                  {submitStatus.submitting ? 'Sending...' : 'Send Message'}
+                  Send Message
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     className='h-5 w-5 ml-2'
@@ -445,11 +400,16 @@ function Contact() {
                     </div>
                     <div className='ml-4'>
                       <h4 className='text-lg font-medium'>Address</h4>
-                      <p className='text-white/80 mt-1'>
+                      <a
+                        href='https://maps.google.com/?q=132a+Jones+St+Sandersville+GA'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='text-white/80 hover:text-white transition-colors mt-1 block'
+                      >
                         132a Jones St.
                         <br />
                         Sandersville, GA
-                      </p>
+                      </a>
                     </div>
                   </div>
                 </div>
