@@ -21,7 +21,7 @@ function Quote() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Create mailto link with form data
-    const mailtoLink = `mailto:info@mgmedicals.com?subject=Quote Request for ${formData.equipmentType}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0AOrganization: ${formData.organization}%0D%0AEquipment Type: ${formData.equipmentType}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
+    const mailtoLink = `mailto:contact@mgmedicalsurplus.com?subject=Quote Request for ${formData.equipmentType}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0AOrganization: ${formData.organization}%0D%0AEquipment Type: ${formData.equipmentType}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
     window.location.href = mailtoLink;
   };
 
