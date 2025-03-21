@@ -170,12 +170,12 @@ function Privacy() {
             <p>132a Jones St.</p>
             <p>Sandersville, GA</p>
             <p>
-              Email:{' '}
+              <strong>Email:</strong>{' '}
               <a
-                href='mailto:MGmedicalsurplus@yahoo.com'
+                href='mailto:contact@mgmedicalsurplus.com'
                 className='text-primary hover:underline'
               >
-                MGmedicalsurplus@yahoo.com
+                contact@mgmedicalsurplus.com
               </a>
             </p>
             <p>
