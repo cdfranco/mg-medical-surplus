@@ -88,7 +88,7 @@ function App() {
                   <span className='absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300'></span>
                 </Link>
                 <Link
-                  to='/quote'
+                  to='/contact'
                   className='inline-flex items-center px-4 py-2 border-2 border-primary text-sm font-medium rounded-lg text-primary hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-300 ml-3'
                 >
                   <span>Request Quote</span>
