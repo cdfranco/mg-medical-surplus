@@ -30,7 +30,7 @@ function HomePage() {
               </div>
               <div className='flex flex-wrap gap-4'>
                 <Link
-                  to='/quote'
+                  to='/contact'
                   className='inline-flex items-center px-6 py-3 border-2 border-primary bg-primary text-base font-medium rounded-lg text-white hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-300 shadow-md hover:shadow-xl'
                 >
                   Request Quote
@@ -188,7 +188,7 @@ function HomePage() {
                 <div className='absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
                 <div className='absolute bottom-4 left-4 right-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300'>
                   <Link
-                    to='/quote'
+                    to='/contact'
                     className='inline-flex items-center justify-center w-full px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors'
                   >
                     Request Quote
@@ -217,7 +217,7 @@ function HomePage() {
                 <div className='absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
                 <div className='absolute bottom-4 left-4 right-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300'>
                   <Link
-                    to='/quote'
+                    to='/contact'
                     className='inline-flex items-center justify-center w-full px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors'
                   >
                     Request Quote
@@ -246,7 +246,7 @@ function HomePage() {
                 <div className='absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
                 <div className='absolute bottom-4 left-4 right-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300'>
                   <Link
-                    to='/quote'
+                    to='/contact'
                     className='inline-flex items-center justify-center w-full px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors'
                   >
                     Request Quote
@@ -404,7 +404,7 @@ function HomePage() {
           </p>
           <div className='flex flex-wrap justify-center gap-4'>
             <Link
-              to='/quote'
+              to='/contact'
               className='inline-flex items-center px-6 py-3 border-2 border-white bg-transparent text-base font-medium rounded-lg text-white hover:bg-white hover:text-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white transition-all duration-300'
             >
               Request Quote

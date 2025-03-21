@@ -6,6 +6,7 @@ import Products from './components/Products';
 import About from './components/About';
 import Contact from './components/Contact';
 import Quote from './components/Quote';
+import Privacy from './components/Privacy';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -155,13 +156,6 @@ function App() {
                 </Link>
                 <Link
                   to='/contact'
-                  className='px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary relative group transition-colors'
-                >
-                  Contact
-                  <span className='absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300'></span>
-                </Link>
-                <Link
-                  to='/quote'
                   className='inline-flex items-center px-4 py-2 border-2 border-primary text-sm font-medium rounded-lg text-primary hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-300 ml-3'
                 >
                   <span>Request Quote</span>
@@ -214,13 +208,6 @@ function App() {
                 </Link>
                 <Link
                   to='/contact'
-                  className='block px-4 py-2.5 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition-all'
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Contact
-                </Link>
-                <Link
-                  to='/quote'
                   className='block px-4 py-3 mt-2 mb-1 text-center rounded-md text-base font-medium bg-primary text-white hover:bg-primary-dark transition-all'
                   onClick={() => setMobileMenuOpen(false)}
                 >
@@ -239,6 +226,7 @@ function App() {
             <Route path='/about' element={<About />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/quote' element={<Quote />} />
+            <Route path='/privacy' element={<Privacy />} />
           </Routes>
         </main>
 
@@ -340,7 +328,7 @@ function App() {
                   </li>
                   <li>
                     <Link
-                      to='/contact'
+                      to='/privacy'
                       className='text-gray-400 hover:text-primary transition-colors flex items-center group'
                     >
                       <svg
@@ -357,7 +345,7 @@ function App() {
                           d='M9 5l7 7-7 7'
                         />
                       </svg>
-                      Contact
+                      Privacy Policy
                     </Link>
                   </li>
                 </ul>
@@ -450,6 +438,14 @@ function App() {
                 © {new Date().getFullYear()} MG Medical Surplus. All rights
                 reserved.
               </p>
+              <div className='mt-4 flex justify-center space-x-6 text-sm'>
+                <Link
+                  to='/privacy'
+                  className='text-gray-400 hover:text-primary transition-colors'
+                >
+                  Privacy Policy
+                </Link>
+              </div>
             </div>
           </div>
         </footer>
