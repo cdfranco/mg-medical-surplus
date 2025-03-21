@@ -14,11 +14,6 @@ const ProductCard = React.memo(({ item, formatPrice }) => (
         alt={item.name}
         className='w-full h-full object-cover'
       />
-      {item.brand && (
-        <div className='absolute bottom-2 right-2 bg-white bg-opacity-80 rounded-md p-1 w-10 h-10 flex items-center justify-center'>
-          <img src={item.brand} alt='Brand' className='max-w-full max-h-full' />
-        </div>
-      )}
       <div className='absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full font-semibold'>
         {formatPrice(item.price)}
       </div>
