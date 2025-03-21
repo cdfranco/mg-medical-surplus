@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Products from './components/Products';
 import Contact from './components/Contact';
 import About from './components/About';
+import PrivacyPolicy from './components/PrivacyPolicy';
 import TidioChat from './components/TidioChat';
 import {
   BeakerIcon,
@@ -529,6 +530,7 @@ function App() {
           <Route path='/products' element={<Products />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/privacy-policy' element={<PrivacyPolicy />} />
         </Routes>
 
         {/* Chat Widget */}
@@ -582,6 +584,14 @@ function App() {
                       Contact
                     </a>
                   </li>
+                  <li>
+                    <Link
+                      to='/privacy-policy'
+                      className='text-gray-300 hover:text-white'
+                    >
+                      Privacy Policy
+                    </Link>
+                  </li>
                 </ul>
               </div>
               <div>
@@ -605,7 +615,13 @@ function App() {
             <div className='mt-8 pt-8 border-t border-gray-700 text-center text-gray-300'>
               <p>
                 &copy; {new Date().getFullYear()} MG Medical Surplus. All rights
-                reserved.
+                reserved.{' '}
+                <Link
+                  to='/privacy-policy'
+                  className='hover:text-primary ml-2 transition-colors'
+                >
+                  Privacy Policy
+                </Link>
               </p>
             </div>
           </div>
