@@ -67,7 +67,7 @@ const products = [
         name: 'X-Ray Equipment',
         description:
           'Digital and analog X-ray systems for radiographic imaging',
-        image: '/images/equipment-1.jpg',
+        image: '/images/hero-medical-equipment.jpg',
         price: 75000,
       },
     ],
@@ -104,7 +104,7 @@ const products = [
         name: 'Operating Tables',
         description:
           'Electric and hydraulic operating tables for surgical procedures',
-        image: '/images/medical-equipment.jpg',
+        image: '/images/equipment-1.jpg',
         price: 25000,
       },
       {
