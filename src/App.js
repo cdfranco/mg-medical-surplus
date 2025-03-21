@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './styles/App.css';
 import HomePage from './components/HomePage';
@@ -6,13 +6,9 @@ import Products from './components/Products';
 import About from './components/About';
 import Contact from './components/Contact';
 import Quote from './components/Quote';
-import Privacy from './components/Privacy';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const mobileMenuRef = useRef(null);
-  const mobileButtonRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,42 +24,19 @@ function App() {
     };
   }, [scrolled]);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        mobileMenuOpen &&
-        mobileMenuRef.current &&
-        !mobileMenuRef.current.contains(event.target) &&
-        mobileButtonRef.current &&
-        !mobileButtonRef.current.contains(event.target)
-      ) {
-        setMobileMenuOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [mobileMenuOpen]);
-
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
-
   return (
     <Router>
       <div className='min-h-screen flex flex-col bg-white'>
         {/* Header */}
         <header
           className={`transition-all duration-300 fixed w-full z-50 ${
-            scrolled || mobileMenuOpen
+            scrolled
               ? 'bg-white/95 backdrop-blur-sm shadow-md'
               : 'bg-transparent py-2'
           }`}
         >
           <nav className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-            <div className='flex justify-between items-center h-16'>
+            <div className='flex justify-between h-16'>
               <div className='flex items-center'>
                 <Link to='/' className='flex items-center space-x-2 group'>
                   <div className='relative'>
@@ -71,68 +44,21 @@ function App() {
                     <img
                       src='/images/logo/medical-logo.svg'
                       alt='MG Medical Surplus Logo'
-                      className='h-9 w-9 sm:h-10 sm:w-10 relative z-10 transform group-hover:rotate-12 transition-transform duration-300'
+                      className='h-10 w-10 relative z-10 transform group-hover:rotate-12 transition-transform duration-300'
                     />
                   </div>
-                  <div className='flex flex-col'>
-                    <span className='text-lg sm:text-xl font-extrabold text-gray-900 tracking-tight'>
-                      MG <span className='text-primary'>Medical</span>
-                      <span className='text-primary'> Surplus</span>
+                  <div>
+                    <span className='text-xl font-extrabold text-gray-900 tracking-tight'>
+                      MG <span className='text-primary'>Medical Surplus</span>
                     </span>
-                    <span className='hidden sm:block text-xs font-medium text-gray-500 tracking-wider'>
+                    <span className='block text-xs font-medium text-gray-500 tracking-wider'>
                       PREMIUM EQUIPMENT
                     </span>
                   </div>
                 </Link>
               </div>
 
-              {/* Mobile menu button */}
-              <div className='flex items-center md:hidden'>
-                <button
-                  ref={mobileButtonRef}
-                  onClick={toggleMobileMenu}
-                  className='inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary'
-                  aria-expanded={mobileMenuOpen}
-                >
-                  <span className='sr-only'>Open main menu</span>
-                  {!mobileMenuOpen ? (
-                    <svg
-                      className='block h-6 w-6'
-                      xmlns='http://www.w3.org/2000/svg'
-                      fill='none'
-                      viewBox='0 0 24 24'
-                      stroke='currentColor'
-                      aria-hidden='true'
-                    >
-                      <path
-                        strokeLinecap='round'
-                        strokeLinejoin='round'
-                        strokeWidth='2'
-                        d='M4 6h16M4 12h16M4 18h16'
-                      />
-                    </svg>
-                  ) : (
-                    <svg
-                      className='block h-6 w-6'
-                      xmlns='http://www.w3.org/2000/svg'
-                      fill='none'
-                      viewBox='0 0 24 24'
-                      stroke='currentColor'
-                      aria-hidden='true'
-                    >
-                      <path
-                        strokeLinecap='round'
-                        strokeLinejoin='round'
-                        strokeWidth='2'
-                        d='M6 18L18 6M6 6l12 12'
-                      />
-                    </svg>
-                  )}
-                </button>
-              </div>
-
-              {/* Desktop menu */}
-              <div className='hidden md:flex items-center space-x-1 md:space-x-4'>
+              <div className='flex items-center space-x-1 sm:space-x-4'>
                 <Link
                   to='/'
                   className='px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary relative group transition-colors'
@@ -156,6 +82,13 @@ function App() {
                 </Link>
                 <Link
                   to='/contact'
+                  className='px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary relative group transition-colors'
+                >
+                  Contact
+                  <span className='absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300'></span>
+                </Link>
+                <Link
+                  to='/quote'
                   className='inline-flex items-center px-4 py-2 border-2 border-primary text-sm font-medium rounded-lg text-primary hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-300 ml-3'
                 >
                   <span>Request Quote</span>
@@ -176,57 +109,17 @@ function App() {
                 </Link>
               </div>
             </div>
-
-            {/* Mobile menu, show/hide based on menu state */}
-            <div
-              ref={mobileMenuRef}
-              className={`md:hidden bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-inner overflow-hidden transition-all duration-300 ${
-                mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-              }`}
-            >
-              <div className='px-2 pt-3 pb-4 space-y-2'>
-                <Link
-                  to='/'
-                  className='block px-4 py-2.5 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition-all'
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Home
-                </Link>
-                <Link
-                  to='/products'
-                  className='block px-4 py-2.5 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition-all'
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Products
-                </Link>
-                <Link
-                  to='/about'
-                  className='block px-4 py-2.5 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition-all'
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  About
-                </Link>
-                <Link
-                  to='/contact'
-                  className='block px-4 py-3 mt-2 mb-1 text-center rounded-md text-base font-medium bg-primary text-white hover:bg-primary-dark transition-all'
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Request Quote
-                </Link>
-              </div>
-            </div>
           </nav>
         </header>
 
         {/* Main Content */}
-        <main className='flex-grow pt-16 md:pt-16 transition-all duration-300'>
+        <main className='flex-grow pt-16'>
           <Routes>
             <Route path='/' element={<HomePage />} />
             <Route path='/products' element={<Products />} />
             <Route path='/about' element={<About />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/quote' element={<Quote />} />
-            <Route path='/privacy' element={<Privacy />} />
           </Routes>
         </main>
 
@@ -328,7 +221,7 @@ function App() {
                   </li>
                   <li>
                     <Link
-                      to='/privacy'
+                      to='/contact'
                       className='text-gray-400 hover:text-primary transition-colors flex items-center group'
                     >
                       <svg
@@ -345,7 +238,7 @@ function App() {
                           d='M9 5l7 7-7 7'
                         />
                       </svg>
-                      Privacy Policy
+                      Contact
                     </Link>
                   </li>
                 </ul>
@@ -429,10 +322,10 @@ function App() {
                       />
                     </svg>
                     <a
-                      href='mailto:MGmedicalsurplus@yahoo.com'
+                      href='mailto:contact@mgmedicalsurplus.com'
                       className='hover:text-primary transition-colors'
                     >
-                      MGmedicalsurplus@yahoo.com
+                      contact@mgmedicalsurplus.com
                     </a>
                   </li>
                 </ul>
@@ -445,14 +338,6 @@ function App() {
                 © {new Date().getFullYear()} MG Medical Surplus. All rights
                 reserved.
               </p>
-              <div className='mt-4 flex justify-center space-x-6 text-sm'>
-                <Link
-                  to='/privacy'
-                  className='text-gray-400 hover:text-primary transition-colors'
-                >
-                  Privacy Policy
-                </Link>
-              </div>
             </div>
           </div>
         </footer>
