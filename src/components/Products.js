@@ -53,7 +53,8 @@ const products = [
         name: 'MRI Systems',
         description:
           'Advanced magnetic resonance imaging systems for detailed diagnostic imaging',
-        image: 'https://placehold.co/600x400/EEE/31343C?text=MRI+Systems',
+        image:
+          'https://images.unsplash.com/photo-1516069677018-378761110b87?w=600&h=400&fit=crop&auto=format',
         price: 150000,
       },
       {
@@ -61,14 +62,15 @@ const products = [
         description:
           'High-resolution ultrasound systems for various diagnostic applications',
         image:
-          'https://placehold.co/600x400/EEE/31343C?text=Ultrasound+Machines',
+          'https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&h=400&fit=crop&auto=format',
         price: 45000,
       },
       {
         name: 'X-Ray Equipment',
         description:
           'Digital and analog X-ray systems for radiographic imaging',
-        image: 'https://placehold.co/600x400/EEE/31343C?text=X-Ray+Equipment',
+        image:
+          'https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?w=600&h=400&fit=crop&auto=format',
         price: 75000,
       },
     ],
@@ -81,20 +83,22 @@ const products = [
         description:
           'Comprehensive patient monitoring systems for accurate vital sign tracking',
         image:
-          'https://placehold.co/600x400/EEE/31343C?text=Vital+Signs+Monitors',
+          'https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=600&h=400&fit=crop&auto=format',
         price: 3500,
       },
       {
         name: 'ECG/EKG Machines',
         description: 'Advanced cardiac monitoring and diagnostic equipment',
-        image: 'https://placehold.co/600x400/EEE/31343C?text=ECG+Machines',
+        image:
+          'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop&auto=format',
         price: 8500,
       },
       {
         name: 'Patient Telemetry Systems',
         description:
           'Wireless monitoring solutions for ambulatory patients allowing freedom of movement',
-        image: 'https://placehold.co/600x400/EEE/31343C?text=Patient+Telemetry',
+        image:
+          'https://images.unsplash.com/photo-1560582861-45078880e48e?w=600&h=400&fit=crop&auto=format',
         price: 12000,
       },
     ],
@@ -106,13 +110,15 @@ const products = [
         name: 'Operating Tables',
         description:
           'Electric and hydraulic operating tables for surgical procedures',
-        image: 'https://placehold.co/600x400/EEE/31343C?text=Operating+Tables',
+        image:
+          'https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=600&h=400&fit=crop&auto=format',
         price: 25000,
       },
       {
         name: 'Surgical Lights',
         description: 'LED surgical lighting systems for optimal visualization',
-        image: 'https://placehold.co/600x400/EEE/31343C?text=Surgical+Lights',
+        image:
+          'https://images.unsplash.com/photo-1571772996211-2f02974dc681?w=600&h=400&fit=crop&auto=format',
         price: 15000,
       },
     ],
