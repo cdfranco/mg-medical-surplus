@@ -378,11 +378,18 @@ function App() {
                         d='M15 11a3 3 0 11-6 0 3 3 0 016 0z'
                       />
                     </svg>
-                    <div>
-                      123 Medical Plaza
-                      <br />
-                      Augusta, GA 30901
-                    </div>
+                    <a
+                      href='https://maps.google.com/?q=132a+Jones+St+Sandersville+GA'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='hover:text-primary transition-colors'
+                    >
+                      <div>
+                        132a Jones St.
+                        <br />
+                        Sandersville, GA
+                      </div>
+                    </a>
                   </li>
                   <li className='flex items-center'>
                     <svg

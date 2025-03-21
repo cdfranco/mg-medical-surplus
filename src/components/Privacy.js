@@ -167,8 +167,8 @@ function Privacy() {
           </p>
           <div className='mt-2'>
             <p className='font-medium'>MG Medical Surplus</p>
-            <p>123 Medical Plaza</p>
-            <p>Augusta, GA 30901</p>
+            <p>132a Jones St.</p>
+            <p>Sandersville, GA</p>
             <p>
               Email:{' '}
               <a
