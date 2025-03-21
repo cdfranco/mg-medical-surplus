@@ -14,6 +14,11 @@ const ProductCard = React.memo(({ item, formatPrice }) => (
         alt={item.name}
         className='w-full h-full object-cover'
       />
+      {item.brand && (
+        <div className='absolute bottom-2 right-2 bg-white bg-opacity-80 rounded-md p-1 w-10 h-10 flex items-center justify-center'>
+          <img src={item.brand} alt='Brand' className='max-w-full max-h-full' />
+        </div>
+      )}
       <div className='absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full font-semibold'>
         {formatPrice(item.price)}
       </div>
@@ -54,6 +59,7 @@ const products = [
         description:
           'Advanced magnetic resonance imaging systems for detailed diagnostic imaging',
         image: '/images/product-mri.jpg',
+        brand: '/images/brands/ge-healthcare.svg',
         price: 150000,
       },
       {
@@ -61,6 +67,7 @@ const products = [
         description:
           'High-resolution ultrasound systems for various diagnostic applications',
         image: '/images/product-ultrasound.jpg',
+        brand: '/images/brands/philips.svg',
         price: 45000,
       },
       {
@@ -68,6 +75,7 @@ const products = [
         description:
           'Digital and analog X-ray systems for radiographic imaging',
         image: '/images/hero-medical-equipment.jpg',
+        brand: '/images/brands/siemens.svg',
         price: 75000,
       },
     ],
@@ -80,12 +88,14 @@ const products = [
         description:
           'Comprehensive patient monitoring systems for accurate vital sign tracking',
         image: '/images/product-monitor.jpg',
+        brand: '/images/brands/medtronic.svg',
         price: 3500,
       },
       {
         name: 'ECG/EKG Machines',
         description: 'Advanced cardiac monitoring and diagnostic equipment',
         image: '/images/equipment-2.jpg',
+        brand: '/images/brands/ge-healthcare.svg',
         price: 8500,
       },
       {
@@ -93,6 +103,7 @@ const products = [
         description:
           'Wireless monitoring solutions for ambulatory patients allowing freedom of movement',
         image: '/images/equipment-3.jpg',
+        brand: '/images/brands/philips.svg',
         price: 12000,
       },
     ],
@@ -105,12 +116,14 @@ const products = [
         description:
           'Electric and hydraulic operating tables for surgical procedures',
         image: '/images/equipment-1.jpg',
+        brand: '/images/brands/stryker.svg',
         price: 25000,
       },
       {
         name: 'Surgical Lights',
         description: 'LED surgical lighting systems for optimal visualization',
-        image: '/images/medical-equipment.jpg',
+        image: '/images/medical-team.jpg',
+        brand: '/images/brands/cardinal-health.svg',
         price: 15000,
       },
     ],
