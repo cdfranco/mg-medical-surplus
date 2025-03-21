@@ -43,6 +43,8 @@ const LazyImage = ({ src, alt, className }) => {
       className={`${className} ${
         isLoading
           ? 'animate-pulse bg-gray-200'
+          : hasError
+          ? 'opacity-80 border border-red-300'
           : 'transition-opacity duration-300'
       }`}
       loading='lazy'
