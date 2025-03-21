@@ -53,22 +53,21 @@ const products = [
         name: 'MRI Systems',
         description:
           'Advanced magnetic resonance imaging systems for detailed diagnostic imaging',
-        image: 'https://placehold.co/600x400/EEE/31343C?text=MRI+Systems',
+        image: '/images/product-mri.jpg',
         price: 150000,
       },
       {
         name: 'Ultrasound Machines',
         description:
           'High-resolution ultrasound systems for various diagnostic applications',
-        image:
-          'https://placehold.co/600x400/EEE/31343C?text=Ultrasound+Machines',
+        image: '/images/product-ultrasound.jpg',
         price: 45000,
       },
       {
         name: 'X-Ray Equipment',
         description:
           'Digital and analog X-ray systems for radiographic imaging',
-        image: 'https://placehold.co/600x400/EEE/31343C?text=X-Ray+Equipment',
+        image: '/images/equipment-1.jpg',
         price: 75000,
       },
     ],
@@ -80,21 +79,20 @@ const products = [
         name: 'Vital Signs Monitors',
         description:
           'Comprehensive patient monitoring systems for accurate vital sign tracking',
-        image:
-          'https://placehold.co/600x400/EEE/31343C?text=Vital+Signs+Monitors',
+        image: '/images/product-monitor.jpg',
         price: 3500,
       },
       {
         name: 'ECG/EKG Machines',
         description: 'Advanced cardiac monitoring and diagnostic equipment',
-        image: 'https://placehold.co/600x400/EEE/31343C?text=ECG+Machines',
+        image: '/images/equipment-2.jpg',
         price: 8500,
       },
       {
         name: 'Patient Telemetry Systems',
         description:
           'Wireless monitoring solutions for ambulatory patients allowing freedom of movement',
-        image: 'https://placehold.co/600x400/EEE/31343C?text=Patient+Telemetry',
+        image: '/images/equipment-3.jpg',
         price: 12000,
       },
     ],
@@ -106,14 +104,13 @@ const products = [
         name: 'Operating Tables',
         description:
           'Electric and hydraulic operating tables for surgical procedures',
-        image: 'https://placehold.co/600x400/EEE/31343C?text=Operating+Tables',
+        image: '/images/medical-equipment.jpg',
         price: 25000,
       },
       {
         name: 'Surgical Lights',
         description: 'LED surgical lighting systems for optimal visualization',
-        image:
-          'https://dummyimage.com/600x400/4485c7/ffffff&text=Surgical+Lights',
+        image: '/images/medical-equipment.jpg',
         price: 15000,
       },
     ],
