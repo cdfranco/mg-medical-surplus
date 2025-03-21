@@ -7,11 +7,11 @@ function Contact() {
   const location = useLocation();
   const formRef = useRef();
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
+    from_name: '',
+    from_email: '',
     phone: '',
     organization: '',
-    equipmentType: '',
+    equipment_type: '',
     message: '',
   });
   const [submitStatus, setSubmitStatus] = useState({
@@ -24,7 +24,7 @@ function Contact() {
     if (location.state?.equipmentType) {
       setFormData((prev) => ({
         ...prev,
-        equipmentType: location.state.equipmentType,
+        equipment_type: location.state.equipmentType,
       }));
     }
   }, [location.state]);
@@ -44,8 +44,8 @@ function Contact() {
     // Using EmailJS to send the form directly without opening email client
     emailjs
       .sendForm(
-        'service_mqzz0ao', // Replace with your EmailJS service ID
-        'template_k5rp6sl', // Replace with your EmailJS template ID
+        'service_ooqmm6o', // Your EmailJS service ID - Gmail or SMTP service you created in EmailJS
+        'template_zx7zs4c', // Your EmailJS template ID - Contact Form template in EmailJS
         formRef.current,
         'NkpurUmfE1kJSefs6' // Your EmailJS public key
       )
@@ -57,11 +57,11 @@ function Contact() {
         });
         // Reset form after successful submission
         setFormData({
-          name: '',
-          email: '',
+          from_name: '',
+          from_email: '',
           phone: '',
           organization: '',
-          equipmentType: '',
+          equipment_type: '',
           message: '',
         });
       })
@@ -69,9 +69,11 @@ function Contact() {
         setSubmitStatus({
           submitting: false,
           success: null,
-          error: 'There was an error sending your message. Please try again.',
+          error: `Error sending message: ${
+            error.text || error.message || 'Unknown error'
+          }. Please check your EmailJS configuration.`,
         });
-        console.error('EmailJS error:', error);
+        console.error('EmailJS error details:', error);
       });
   };
 
@@ -113,6 +115,11 @@ function Contact() {
             )}
 
             <form ref={formRef} onSubmit={handleSubmit} className='space-y-6'>
+              <input
+                type='hidden'
+                name='subject'
+                value={`Quote Request: ${formData.equipment_type}`}
+              />
               <div className='space-y-5'>
                 <div>
                   <label
@@ -140,10 +147,10 @@ function Contact() {
                     </div>
                     <input
                       type='text'
-                      name='name'
+                      name='from_name'
                       id='name'
                       required
-                      value={formData.name}
+                      value={formData.from_name}
                       onChange={handleChange}
                       className='block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-xl shadow-sm focus:ring-2 focus:ring-primary focus:border-transparent'
                       placeholder='John Doe'
@@ -178,10 +185,10 @@ function Contact() {
                       </div>
                       <input
                         type='email'
-                        name='email'
+                        name='from_email'
                         id='email'
                         required
-                        value={formData.email}
+                        value={formData.from_email}
                         onChange={handleChange}
                         className='block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-xl shadow-sm focus:ring-2 focus:ring-primary focus:border-transparent'
                         placeholder='you@example.com'
@@ -288,10 +295,10 @@ function Contact() {
                     </div>
                     <input
                       type='text'
-                      name='equipmentType'
+                      name='equipment_type'
                       id='equipmentType'
                       required
-                      value={formData.equipmentType}
+                      value={formData.equipment_type}
                       onChange={handleChange}
                       className='block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-xl shadow-sm focus:ring-2 focus:ring-primary focus:border-transparent'
                       placeholder='e.g., MRI Machine, Ultrasound System'
