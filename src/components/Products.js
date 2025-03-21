@@ -93,6 +93,14 @@ const products = [
           'https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?auto=format&fit=crop&q=80',
         price: 8500,
       },
+      {
+        name: 'Patient Telemetry Systems',
+        description:
+          'Wireless monitoring solutions for ambulatory patients allowing freedom of movement',
+        image:
+          'https://images.unsplash.com/photo-1581595219315-a187dd40c322?auto=format&fit=crop&q=80',
+        price: 12000,
+      },
     ],
   },
   {
