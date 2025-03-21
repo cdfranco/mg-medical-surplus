@@ -6,6 +6,7 @@ import Products from './components/Products';
 import About from './components/About';
 import Contact from './components/Contact';
 import Quote from './components/Quote';
+import PrivacyPolicy from './components/PrivacyPolicy';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -192,6 +193,7 @@ function App() {
             <Route path='/about' element={<About />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/quote' element={<Quote />} />
+            <Route path='/privacy-policy' element={<PrivacyPolicy />} />
           </Routes>
         </main>
 
@@ -313,6 +315,28 @@ function App() {
                       Contact
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      to='/privacy-policy'
+                      className='text-gray-400 hover:text-primary transition-colors flex items-center group'
+                    >
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        className='h-4 w-4 mr-2 transform group-hover:translate-x-1 transition-transform'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke='currentColor'
+                      >
+                        <path
+                          strokeLinecap='round'
+                          strokeLinejoin='round'
+                          strokeWidth={2}
+                          d='M9 5l7 7-7 7'
+                        />
+                      </svg>
+                      Privacy Policy
+                    </Link>
+                  </li>
                 </ul>
               </div>
 
@@ -408,7 +432,13 @@ function App() {
             <div className='mt-10 pt-8 border-t border-gray-800 text-center text-gray-400'>
               <p className='text-sm'>
                 © {new Date().getFullYear()} MG Medical Surplus. All rights
-                reserved.
+                reserved.{' '}
+                <Link
+                  to='/privacy-policy'
+                  className='hover:text-primary ml-2 transition-colors'
+                >
+                  Privacy Policy
+                </Link>
               </p>
             </div>
           </div>
