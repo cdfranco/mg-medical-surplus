@@ -1,7 +1,7 @@
 // Force rebuild - Updated with search and filter functionality
 import React, { useState, useMemo, Suspense, lazy } from 'react';
 import { Link } from 'react-router-dom';
-import LazyImage from './LazyImage';
+import SimpleImage from './SimpleImage';
 
 // Lazy load the SearchAndFilter component
 const SearchAndFilter = lazy(() => import('./SearchAndFilter'));
@@ -9,7 +9,7 @@ const SearchAndFilter = lazy(() => import('./SearchAndFilter'));
 const ProductCard = React.memo(({ item, formatPrice }) => (
   <div className='bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300'>
     <div className='relative h-48'>
-      <LazyImage
+      <SimpleImage
         src={item.image}
         alt={item.name}
         className='w-full h-full object-cover'
