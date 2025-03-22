@@ -401,7 +401,7 @@ ${formData.message}
                     <div className='ml-4'>
                       <h4 className='text-lg font-medium'>Address</h4>
                       <a
-                        href='https://maps.google.com/?q=132a+Jones+St+Sandersville+GA'
+                        href='https://www.google.com/maps/place/Middle+Georgia+Medical+Surplus,+llc/@32.9835105,-82.8146967,17z/data=!3m1!4b1!4m6!3m5!1s0x88f72f0ac18d136d:0xe0dbadc567329ef7!8m2!3d32.983506!4d-82.8121218!16s%2Fg%2F11v9yy1q58?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D'
                         target='_blank'
                         rel='noopener noreferrer'
                         className='text-white/80 hover:text-white transition-colors mt-1 block'
