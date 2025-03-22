@@ -7,27 +7,20 @@ function HomePage() {
   return (
     <div className='bg-white'>
       {/* Hero Section */}
-      <section className='relative overflow-hidden bg-gradient-to-br from-white via-blue-50 to-gray-100'>
-        <div className='absolute inset-0 opacity-20'>
-          <div className='absolute w-96 h-96 -top-20 -right-20 bg-primary/20 rounded-full'></div>
-          <div className='absolute w-96 h-96 -bottom-20 -left-20 bg-secondary/20 rounded-full'></div>
-        </div>
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative z-10'>
+      <section className='relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100'>
+        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32'>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
-            <div className='space-y-8'>
-              <div>
-                <h1 className='text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight'>
-                  Quality Medical Equipment for
-                  <span className='block text-primary mt-2'>
-                    Healthcare Professionals
-                  </span>
-                </h1>
-                <p className='mt-6 text-lg text-gray-600 max-w-lg'>
-                  We provide high-quality, reliable medical equipment for
-                  hospitals, clinics, and healthcare providers at competitive
-                  prices.
-                </p>
-              </div>
+            <div className='text-center lg:text-left'>
+              <h1 className='text-4xl font-extrabold tracking-tight text-secondary sm:text-5xl lg:text-6xl'>
+                <span className='block'>Premium Medical</span>
+                <span className='block text-primary'>Equipment Solutions</span>
+              </h1>
+              <p className='mt-6 text-xl text-gray-600'>
+                Middle Georgia Medical Surplus offers high-quality pre-owned
+                medical equipment at competitive prices, serving hospitals,
+                clinics, and healthcare providers across Sandersville, Augusta,
+                Macon and beyond.
+              </p>
               <div className='flex flex-wrap gap-4'>
                 <Link
                   to='/contact'
@@ -165,14 +158,14 @@ function HomePage() {
       </section>
 
       {/* Featured Products */}
-      <section className='py-16 md:py-24'>
+      <section className='bg-white py-16 lg:py-24'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-          <div className='text-center mb-16'>
-            <h2 className='text-3xl md:text-4xl font-bold text-gray-900'>
-              Featured <span className='text-primary'>Equipment</span>
+          <div className='text-center'>
+            <h2 className='text-3xl font-extrabold text-secondary sm:text-4xl'>
+              Featured Medical Equipment
             </h2>
-            <p className='mt-4 text-xl text-gray-600 max-w-2xl mx-auto'>
-              Browse our collection of high-quality medical equipment
+            <p className='mt-4 text-xl text-gray-600'>
+              Discover our selection of premium pre-owned medical equipment
             </p>
           </div>
 

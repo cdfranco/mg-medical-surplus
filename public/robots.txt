@@ -1,4 +1,10 @@
+# robots.txt for mgmedicalsurplus.com
 User-agent: *
 Allow: /
+Disallow: /404.html
 
+# Set crawl delay to be gentle on the server
+Crawl-delay: 5
+
+# Sitemap location
 Sitemap: https://mgmedicalsurplus.com/sitemap.xml 
