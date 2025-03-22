@@ -49,7 +49,7 @@ function HomePage() {
                   Browse Products
                 </Link>
               </div>
-              <div className='flex items-center space-x-4 text-sm text-gray-500'>
+              <div className='flex items-center space-x-4 text-sm text-gray-500 mt-8'>
                 <div className='flex items-center'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
