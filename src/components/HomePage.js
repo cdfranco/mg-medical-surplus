@@ -21,7 +21,7 @@ function HomePage() {
                 clinics, and healthcare providers across Sandersville, Augusta,
                 Macon and beyond.
               </p>
-              <div className='flex flex-wrap gap-4 mt-8'>
+              <div className='flex flex-wrap justify-center lg:justify-start gap-4 mt-8'>
                 <Link
                   to='/contact'
                   className='inline-flex items-center px-6 py-3 border-2 border-primary bg-primary text-base font-medium rounded-lg text-white hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-300 shadow-md hover:shadow-xl'
