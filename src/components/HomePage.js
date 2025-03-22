@@ -50,7 +50,7 @@ function HomePage() {
                 </Link>
               </div>
               <div className='flex items-center space-x-4 text-sm text-gray-500 mt-8'>
-                <div className='flex items-center'>
+                <div className='flex items-center relative z-20 bg-white/80 px-2 py-1 rounded-full'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     className='h-5 w-5 text-primary mr-1'
@@ -67,7 +67,7 @@ function HomePage() {
                   </svg>
                   <span>Quality Equipment</span>
                 </div>
-                <div className='flex items-center'>
+                <div className='flex items-center relative z-20 bg-white/80 px-2 py-1 rounded-full'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     className='h-5 w-5 text-primary mr-1'
@@ -96,7 +96,7 @@ function HomePage() {
             </div>
           </div>
         </div>
-        <div className='absolute bottom-0 left-0 right-0'>
+        <div className='absolute bottom-0 left-0 right-0 z-10'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 1440 320'
