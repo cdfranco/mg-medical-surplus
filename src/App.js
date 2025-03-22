@@ -130,7 +130,7 @@ function App() {
                   to='/contact'
                   className='inline-flex items-center px-4 py-2 border-2 border-primary text-sm font-medium rounded-lg text-primary hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-300 ml-3'
                 >
-                  <span>Request Quote</span>
+                  <span>Contact Us</span>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     className='h-4 w-4 ml-2'
@@ -178,7 +178,7 @@ function App() {
                   className='block px-3 py-2 rounded-md text-base font-medium text-primary border border-primary hover:bg-primary hover:text-white'
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Request Quote
+                  Contact Us
                 </Link>
               </div>
             </div>
