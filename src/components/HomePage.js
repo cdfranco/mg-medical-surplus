@@ -86,17 +86,17 @@ function HomePage() {
                 </div>
               </div>
             </div>
-            <div className='relative lg:pl-8'>
+            <div className='relative lg:pl-8 overflow-visible h-full'>
               <div className='absolute inset-0 rounded-2xl bg-primary/10 transform -rotate-6'></div>
               <img
                 src='/images/medical-equipment.jpg'
                 alt='Medical Equipment'
-                className='relative z-10 rounded-2xl shadow-xl w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105 hover:rotate-2'
+                className='relative z-30 rounded-2xl shadow-xl w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105 hover:rotate-2'
               />
             </div>
           </div>
         </div>
-        <div className='absolute bottom-0 left-0 right-0 z-10'>
+        <div className='absolute bottom-0 left-0 right-0 z-0'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 1440 320'
