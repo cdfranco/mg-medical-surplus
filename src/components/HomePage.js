@@ -21,10 +21,10 @@ function HomePage() {
                 clinics, and healthcare providers across Sandersville, Augusta,
                 Macon and beyond.
               </p>
-              <div className='flex flex-wrap justify-center lg:justify-start gap-4 mt-8'>
+              <div className='flex flex-wrap justify-center lg:justify-start gap-4 mt-8 relative z-30'>
                 <Link
                   to='/contact'
-                  className='inline-flex items-center px-6 py-3 border-2 border-primary bg-primary text-base font-medium rounded-lg text-white hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-300 shadow-md hover:shadow-xl'
+                  className='inline-flex items-center px-6 py-3 border-2 border-primary bg-primary text-base font-medium rounded-lg text-white hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-300 shadow-md hover:shadow-xl relative z-30'
                 >
                   Request Quote
                   <svg
@@ -44,7 +44,7 @@ function HomePage() {
                 </Link>
                 <Link
                   to='/products'
-                  className='inline-flex items-center px-6 py-3 border-2 border-gray-900 text-base font-medium rounded-lg text-gray-900 hover:bg-gray-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-all duration-300'
+                  className='inline-flex items-center px-6 py-3 border-2 border-gray-900 text-base font-medium rounded-lg text-gray-900 hover:bg-gray-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-all duration-300 relative z-30'
                 >
                   Browse Products
                 </Link>
