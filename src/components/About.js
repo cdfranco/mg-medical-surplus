@@ -151,7 +151,7 @@ function About() {
             <div className='bg-gradient-to-br from-primary/5 to-secondary/5 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300'>
               <div className='relative w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-white shadow-md'>
                 <img
-                  src='/images/team/hannah-johnson.jpg'
+                  src='/images/team/HannahHeadshot2@2x.png'
                   alt='Hannah Johnson - Founder & CEO'
                   className='w-full h-full object-cover'
                 />
@@ -173,7 +173,7 @@ function About() {
               </div>
               <div className='mt-6 text-center'>
                 <h3 className='text-lg font-medium text-secondary'>
-                  Your Name
+                  Joseph Johnson
                 </h3>
                 <p className='text-gray-700'>Operations Manager</p>
               </div>
