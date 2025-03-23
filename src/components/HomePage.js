@@ -86,13 +86,15 @@ function HomePage() {
                 </div>
               </div>
             </div>
-            <div className='relative lg:pl-8 overflow-visible h-full'>
-              <div className='absolute inset-0 rounded-2xl bg-primary/10 transform -rotate-6'></div>
-              <img
-                src='/images/medical-equipment.jpg'
-                alt='Medical Equipment'
-                className='relative z-30 rounded-2xl shadow-xl w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105 hover:rotate-2'
-              />
+            <div className='relative lg:pl-8 h-full'>
+              <div className='absolute inset-0 -m-4 rounded-2xl bg-primary/10 transform -rotate-6 z-10'></div>
+              <div className='relative z-20 overflow-hidden rounded-2xl shadow-xl'>
+                <img
+                  src='/images/medical-equipment.jpg'
+                  alt='Medical Equipment'
+                  className='w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105 hover:rotate-2'
+                />
+              </div>
             </div>
           </div>
         </div>
