@@ -166,21 +166,6 @@ function About() {
             <div className='bg-gradient-to-br from-primary/5 to-secondary/5 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300'>
               <div className='relative w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-white shadow-md'>
                 <img
-                  src='/images/team/JosephJohnson.jpg'
-                  alt='Joseph Johnson - Operations Manager'
-                  className='w-full h-full object-cover'
-                />
-              </div>
-              <div className='mt-6 text-center'>
-                <h3 className='text-lg font-medium text-secondary'>
-                  Joseph Johnson
-                </h3>
-                <p className='text-gray-700'>Operations Manager</p>
-              </div>
-            </div>
-            <div className='bg-gradient-to-br from-primary/5 to-secondary/5 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300'>
-              <div className='relative w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-white shadow-md'>
-                <img
                   src='https://images.unsplash.com/photo-1612349317150-e413f6a5b16d'
                   alt='Team Member'
                   className='w-full h-full object-cover'
@@ -191,6 +176,21 @@ function About() {
                   Michael Chen
                 </h3>
                 <p className='text-gray-700'>Technical Director</p>
+              </div>
+            </div>
+            <div className='bg-gradient-to-br from-primary/5 to-secondary/5 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300'>
+              <div className='relative w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-white shadow-md'>
+                <img
+                  src='/images/team/JosephJohnson.jpg'
+                  alt='Joseph Johnson - Operations Manager'
+                  className='w-full h-full object-cover'
+                />
+              </div>
+              <div className='mt-6 text-center'>
+                <h3 className='text-lg font-medium text-secondary'>
+                  Joseph Johnson
+                </h3>
+                <p className='text-gray-700'>Operations Manager</p>
               </div>
             </div>
           </div>
