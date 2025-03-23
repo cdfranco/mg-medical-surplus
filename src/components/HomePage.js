@@ -24,9 +24,10 @@ function HomePage() {
               <div className='flex flex-wrap justify-center lg:justify-start gap-4 mt-8'>
                 <Link
                   to='/contact'
+                  aria-label='Contact us for a quote'
                   className='inline-flex items-center px-6 py-3 border-2 border-primary bg-primary text-base font-medium rounded-lg text-white hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-300 shadow-md hover:shadow-xl'
                 >
-                  Request Quote
+                  Contact Us
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     className='h-5 w-5 ml-2'
@@ -44,6 +45,7 @@ function HomePage() {
                 </Link>
                 <Link
                   to='/products'
+                  aria-label='Browse our product catalog'
                   className='inline-flex items-center px-6 py-3 border-2 border-gray-900 text-base font-medium rounded-lg text-gray-900 hover:bg-gray-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-all duration-300'
                 >
                   Browse Products
