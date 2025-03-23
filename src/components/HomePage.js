@@ -399,13 +399,13 @@ function HomePage() {
           </p>
           <div className='flex flex-wrap justify-center gap-4'>
             <Link
-              to='/contact'
+              to='/contact#top'
               className='inline-flex items-center px-6 py-3 border-2 border-white bg-transparent text-base font-medium rounded-lg text-white hover:bg-white hover:text-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white transition-all duration-300'
             >
               Request Quote
             </Link>
             <Link
-              to='/contact'
+              to='/contact#top'
               className='inline-flex items-center px-6 py-3 border-2 border-transparent bg-white text-base font-medium rounded-lg text-primary hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white transition-all duration-300'
             >
               Contact Us
