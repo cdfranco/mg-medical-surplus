@@ -12,14 +12,35 @@ function HomePage() {
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
             <div className='text-center lg:text-left'>
               <h1 className='text-4xl font-extrabold tracking-tight text-secondary sm:text-5xl lg:text-6xl'>
-                <span className='block'>Affordable Medical</span>
-                <span className='block text-primary'>Equipment Solutions</span>
+                Quality Pre-Owned{' '}
+                <span className='text-primary'>Medical Equipment</span> in
+                Middle Georgia
               </h1>
               <p className='mt-6 text-xl text-gray-600'>
                 Middle Georgia Medical Surplus offers high-quality pre-owned
                 medical equipment at competitive prices, serving hospitals,
-                clinics, and healthcare providers across Sandersville, Augusta,
-                Macon and beyond.
+                clinics, and healthcare providers across{' '}
+                <Link
+                  to='/service-areas'
+                  className='text-primary hover:underline'
+                >
+                  Sandersville
+                </Link>
+                ,{' '}
+                <Link
+                  to='/service-areas'
+                  className='text-primary hover:underline'
+                >
+                  Augusta
+                </Link>
+                ,{' '}
+                <Link
+                  to='/service-areas'
+                  className='text-primary hover:underline'
+                >
+                  Macon
+                </Link>{' '}
+                and beyond.
               </p>
               <div className='flex flex-wrap justify-center lg:justify-start gap-4 mt-8 relative z-30'>
                 <Link
@@ -117,7 +138,9 @@ function HomePage() {
       <section className='marquee-container'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>
           <div className='flex justify-center'>
-            <p className='marquee-title'>Serving Middle Georgia and More</p>
+            <h2 className='text-2xl font-bold text-secondary mb-4'>
+              Serving Middle Georgia and More
+            </h2>
           </div>
         </div>
         <div className='marquee-content'>
