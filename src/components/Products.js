@@ -77,26 +77,39 @@ const products = [
     ],
   },
   {
+    category: 'Sterilization Equipment',
+    items: [
+      {
+        name: 'Variety Automatic Ultraclaves',
+        description:
+          'Price ranges from $1400 - $4000 depending on size, make and model. Contact us for availability.',
+        image:
+          '/images/products/Ritter-M9-Ultraclave-Automatic-Sterilizer-Old-Style-1.jpg',
+        price: null,
+      },
+    ],
+  },
+  {
     category: 'Patient Care Equipment',
     items: [
       {
         name: 'Blood Drawing Chairs',
         description: 'Available in various styles and configurations.',
-        image: '/images/equipment-3.jpg',
+        image: '/images/products/blood-drawing-chairs.jpg',
         price: null,
       },
       {
         name: 'Exam Lamps',
         description:
           'High-quality lighting solutions for medical examinations.',
-        image: '/images/medical-equipment.jpg',
+        image: '/images/products/exam-lamps.jpg',
         price: null,
       },
       {
         name: 'Powered Procedure Chairs',
         description:
           'Designed for various medical procedures with adjustable settings.',
-        image: '/images/equipment-3.jpg',
+        image: '/images/products/powered-procedure-chairs.jpg',
         price: null,
       },
     ],
@@ -114,7 +127,7 @@ const products = [
       {
         name: 'Patient & Vital Sign Monitors',
         description: 'Includes new accessories and a 30-day warranty.',
-        image: '/images/product-monitor.jpg',
+        image: '/images/products/vital-sign-monitors.jpg',
         price: 599,
       },
     ],

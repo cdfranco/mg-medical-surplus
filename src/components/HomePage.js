@@ -12,7 +12,7 @@ function HomePage() {
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
             <div className='text-center lg:text-left'>
               <h1 className='text-4xl font-extrabold tracking-tight text-secondary sm:text-5xl lg:text-6xl'>
-                <span className='block'>Premium Medical</span>
+                <span className='block'>Affordable Medical</span>
                 <span className='block text-primary'>Equipment Solutions</span>
               </h1>
               <p className='mt-6 text-xl text-gray-600'>
@@ -167,7 +167,7 @@ function HomePage() {
               Featured Medical Equipment
             </h2>
             <p className='mt-4 text-xl text-gray-600'>
-              Discover our selection of premium pre-owned medical equipment
+              Discover our selection of affordable pre-owned medical equipment
             </p>
           </div>
 
@@ -292,17 +292,17 @@ function HomePage() {
           <div className='absolute w-80 h-80 -bottom-20 -left-40 bg-secondary rounded-full'></div>
         </div>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10'>
-          <div className='text-center mb-16'>
-            <h2 className='text-3xl md:text-4xl font-bold text-gray-900'>
-              Why Choose <span className='text-primary'>MG Medical</span>
+          <div className='text-center mb-12'>
+            <h2 className='text-3xl font-extrabold text-gray-900'>
+              Why Choose Us
             </h2>
-            <p className='mt-4 text-xl text-gray-600 max-w-2xl mx-auto'>
+            <p className='mt-4 text-xl text-gray-600'>
               We are dedicated to providing the highest quality medical
               equipment
             </p>
           </div>
 
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
             {/* Feature 1 */}
             <div className='bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300'>
               <div className='flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-6'>
@@ -381,6 +381,33 @@ function HomePage() {
               <p className='text-gray-600'>
                 Our team of experts is available to provide guidance and support
                 throughout your purchase process.
+              </p>
+            </div>
+
+            {/* Feature 4 */}
+            <div className='bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300'>
+              <div className='flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-6'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  className='h-8 w-8 text-primary'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke='currentColor'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0'
+                  />
+                </svg>
+              </div>
+              <h3 className='text-xl font-bold text-gray-900 mb-3'>
+                Affordable Delivery
+              </h3>
+              <p className='text-gray-600'>
+                We offer affordable delivery to your door. Contact us for any
+                questions.
               </p>
             </div>
           </div>

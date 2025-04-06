@@ -54,7 +54,7 @@ function App() {
                       MG <span className='text-primary'>Medical Surplus</span>
                     </span>
                     <span className='block text-xs font-medium text-gray-500 tracking-wider'>
-                      PREMIUM EQUIPMENT
+                      AFFORDABLE EQUIPMENT
                     </span>
                   </div>
                 </Link>
