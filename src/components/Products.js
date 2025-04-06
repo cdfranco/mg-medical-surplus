@@ -8,15 +8,17 @@ const SearchAndFilter = lazy(() => import('./SearchAndFilter'));
 
 const ProductCard = React.memo(({ item, formatPrice }) => (
   <div className='bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300'>
-    <div className='relative h-48'>
+    <div className='relative h-64 overflow-hidden bg-white group'>
       <SimpleImage
         src={item.image}
         alt={item.name}
-        className='w-full h-full object-cover'
+        className='w-full h-full object-contain bg-white p-4 transition-transform duration-300 group-hover:scale-125'
       />
-      <div className='absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full font-semibold'>
-        {formatPrice(item.price)}
-      </div>
+      {item.price !== null && (
+        <div className='absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full font-semibold'>
+          {formatPrice(item.price)}
+        </div>
+      )}
     </div>
     <div className='p-6'>
       <h3 className='text-xl font-semibold text-secondary'>{item.name}</h3>
@@ -26,7 +28,7 @@ const ProductCard = React.memo(({ item, formatPrice }) => (
         state={{ equipmentType: item.name }}
         className='mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-dark'
       >
-        Request Quote
+        {item.price === null ? 'Request Quote' : 'Contact Us'}
       </Link>
     </div>
   </div>
@@ -47,79 +49,73 @@ const CategorySection = React.memo(({ category, formatPrice }) => (
 
 const products = [
   {
-    category: 'Imaging Equipment',
+    category: 'Examination Tables',
     items: [
       {
-        name: 'MRI Systems',
-        description:
-          'Advanced magnetic resonance imaging systems for detailed diagnostic imaging',
-        image: '/images/product-mri.jpg',
-        brand: '/images/brands/ge-healthcare.svg',
-        price: 150000,
+        name: 'Midmark Ritter 104 Examination Table',
+        description: 'Refurbished. Upholstery and color of your choice.',
+        image: '/images/products/midmark-ritter-104.jpg',
+        price: 600,
       },
       {
-        name: 'Ultrasound Machines',
-        description:
-          'High-resolution ultrasound systems for various diagnostic applications',
-        image: '/images/product-ultrasound.jpg',
-        brand: '/images/brands/philips.svg',
-        price: 45000,
-      },
-      {
-        name: 'X-Ray Equipment',
-        description:
-          'Digital and analog X-ray systems for radiographic imaging',
-        image: '/images/hero-medical-equipment.jpg',
-        brand: '/images/brands/siemens.svg',
-        price: 75000,
+        name: 'Midmark Ritter 204 Examination Table',
+        description: 'Refurbished. Upholstery and color of your choice.',
+        image: '/images/products/midmark-ritter-204.jpg',
+        price: 1200,
       },
     ],
   },
   {
-    category: 'Patient Monitoring',
+    category: 'Diagnostic Equipment',
     items: [
       {
-        name: 'Vital Signs Monitors',
-        description:
-          'Comprehensive patient monitoring systems for accurate vital sign tracking',
-        image: '/images/product-monitor.jpg',
-        brand: '/images/brands/medtronic.svg',
-        price: 3500,
+        name: 'GE Mac5500 EKG',
+        description: 'Tested and includes a 30-day warranty.',
+        image: '/images/products/ge-mac5500.jpg',
+        price: 899,
       },
+    ],
+  },
+  {
+    category: 'Patient Care Equipment',
+    items: [
       {
-        name: 'ECG/EKG Machines',
-        description: 'Advanced cardiac monitoring and diagnostic equipment',
-        image: '/images/equipment-2.jpg',
-        brand: '/images/brands/ge-healthcare.svg',
-        price: 8500,
-      },
-      {
-        name: 'Patient Telemetry Systems',
-        description:
-          'Wireless monitoring solutions for ambulatory patients allowing freedom of movement',
+        name: 'Blood Drawing Chairs',
+        description: 'Available in various styles and configurations.',
         image: '/images/equipment-3.jpg',
-        brand: '/images/brands/philips.svg',
-        price: 12000,
+        price: null,
+      },
+      {
+        name: 'Exam Lamps',
+        description:
+          'High-quality lighting solutions for medical examinations.',
+        image: '/images/medical-equipment.jpg',
+        price: null,
+      },
+      {
+        name: 'Powered Procedure Chairs',
+        description:
+          'Designed for various medical procedures with adjustable settings.',
+        image: '/images/equipment-3.jpg',
+        price: null,
       },
     ],
   },
   {
-    category: 'Surgical Equipment',
+    category: 'Monitoring Equipment',
     items: [
       {
-        name: 'Operating Tables',
+        name: 'Baxter Welch Allyn Monitors',
         description:
-          'Electric and hydraulic operating tables for surgical procedures',
-        image: '/images/equipment-1.jpg',
-        brand: '/images/brands/stryker.svg',
-        price: 25000,
+          '6000 series touch screen monitors comes on a stand with all new accessories with a 30 day warranty.',
+        image: '/images/products/welch-allyn-monitors.jpg',
+        price: 1299,
       },
       {
-        name: 'Surgical Lights',
-        description: 'LED surgical lighting systems for optimal visualization',
-        image: '/images/medical-team.jpg',
-        brand: '/images/brands/cardinal-health.svg',
-        price: 15000,
+        name: 'Patient & Vital Sign Monitors',
+        description: 'Includes new accessories and a 30-day warranty.',
+        image: '/images/product-monitor.jpg',
+        price: 599,
       },
     ],
   },
@@ -203,11 +199,7 @@ function Products() {
             </div>
           }
         >
-          <SearchAndFilter
-            onSearch={handleSearch}
-            onFilter={handleSearch}
-            categories={categories}
-          />
+          <SearchAndFilter onFilter={handleSearch} categories={categories} />
         </Suspense>
 
         {/* Products Grid */}

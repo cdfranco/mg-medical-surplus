@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FiSearch, FiFilter } from 'react-icons/fi';
 
-const SearchAndFilter = ({ onSearch, onFilter, categories }) => {
+const SearchAndFilter = ({ onFilter, categories }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [priceRange, setPriceRange] = useState('all');
@@ -10,7 +10,7 @@ const SearchAndFilter = ({ onSearch, onFilter, categories }) => {
   const handleSearch = (e) => {
     const value = e.target.value;
     setSearchTerm(value);
-    onSearch(value, selectedCategory, priceRange);
+    onFilter(value, selectedCategory, priceRange);
   };
 
   const handleCategoryChange = (e) => {
