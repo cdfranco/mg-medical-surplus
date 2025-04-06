@@ -7,6 +7,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Quote from './components/Quote';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import WhatsAppChat from './components/WhatsAppChat';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -196,6 +197,9 @@ function App() {
             <Route path='/privacy-policy' element={<PrivacyPolicy />} />
           </Routes>
         </main>
+
+        {/* WhatsApp Chat Widget */}
+        <WhatsAppChat />
 
         {/* Footer */}
         <footer className='bg-gradient-to-br from-gray-900 to-gray-800 text-white relative overflow-hidden'>
