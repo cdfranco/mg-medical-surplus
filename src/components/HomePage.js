@@ -111,7 +111,7 @@ function HomePage() {
               <div className='absolute inset-0 -m-4 rounded-2xl bg-primary/10 transform -rotate-6 z-10'></div>
               <div className='relative z-20 overflow-hidden rounded-2xl shadow-xl'>
                 <img
-                  src='/images/medical-equipment.jpg'
+                  src='/images/products/heroMedicalEquipment2.jpg'
                   alt='Medical Equipment'
                   className='w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105 hover:rotate-2'
                 />
