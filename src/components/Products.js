@@ -72,7 +72,7 @@ const products = [
         name: 'GE Mac5500 EKG',
         description: 'Tested and includes a 30-day warranty.',
         image: '/images/products/ge-mac5500.jpg',
-        price: 899,
+        price: 1099,
       },
     ],
   },
